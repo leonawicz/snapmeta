@@ -120,22 +120,28 @@ See <code>use_these</code> for details on defaults.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>reminders</span>()</div><div class='output co'>#&gt; 1. Create a new R package via New Project &gt; R Package
+    <pre class="examples"><div class='input'><span class='fu'>reminders</span>()</div><div class='output co'>#&gt; 1. Create a new R package via RStudio &gt; New Project &gt; R Package
 #&gt;   with 'Create a git repository' checked.
 #&gt; 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.
+#&gt; 
 #&gt; 3. Add the repo on GitHub:
 #&gt;   Use default settings (Do not create README.md).
 #&gt;   Set docs/ directory for hosting project website
+#&gt; 
 #&gt; 4. Then in git shell, enter:
 #&gt;   git remote add origin git@github.com:leonawicz/reference.git
 #&gt;   git push -u origin master
+#&gt; 
 #&gt; 5. Then return to R console and run:
 #&gt;   snapmeta::use_these()
-#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.
+#&gt;     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.
+#&gt; 
+#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.
 #&gt; 7. Check the following:
 #&gt;   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.
-#&gt;   Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
+#&gt;   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
 #&gt;   Delete NAMESPACE so it can be auto-generated via devtools.
+#&gt;   Delete any Hello World files.
 #&gt;   At least one inital unit test is required to pass build.
 #&gt;   Commit changes, but hold off on cran-comments.md and revdep until meaningful.</div></pre>
   </div>
