@@ -1,0 +1,21 @@
+Package: snapmeta
+Version: 0.0.0.9000
+Title: What the Package Does (one line, title case)
+Description: What the package does (one paragraph).
+Authors@R: c(person("Matthew", "Leonawicz", email = "mfleonawicz@alaska.edu", role = c("aut", "cre")),
+    person("SNAP", role = c("cph", "fnd"))
+    )
+Depends: R (>= 3.4.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Suggests:
+    testthat,
+    covr,
+    knitr,
+    rmarkdown
+Url: https://github.com/leonawicz/snapmeta
+BugReports: https://github.com/leonawicz/snapmeta/issues
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
