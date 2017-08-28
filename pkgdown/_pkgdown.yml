@@ -4,6 +4,21 @@ template:
   params:
     bootswatch: sandstone
 
+reference:
+- title: Package setup
+  contents:
+  - reminders
+  - use_these
+  - use_authors
+  - use_clone_notes
+  - use_lintr
+  - pkg_authors
+  - pkg_cph
+- title: SNAPverse information
+  contents:
+  - sv_local_pkgs
+  - sv_pkgs
+ 
 navbar:
   type: inverse
   right:
