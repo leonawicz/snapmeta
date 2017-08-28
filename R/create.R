@@ -9,7 +9,7 @@
 #' @param pkg defaults to working directory.
 #' @param account defaults to "leonawicz".
 #'
-#' @return \codee{cat} a list of steps to the console.
+#' @return \code{cat} a list of steps to the console.
 #' @export
 #'
 #' @examples
