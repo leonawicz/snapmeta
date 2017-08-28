@@ -26,7 +26,12 @@ new_pkg_reminder <- function(pkg=basename(getwd()), account="leonawicz"){
     "git push -u origin master\n",
     "5. Then return to R console and run:\n  ",
     "snapmeta::use_these()\n",
-    "6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.\n"
+    "6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.\n",
+    "7. Check the following:\n  ",
+    "Delete absolute path to `docs` created by pkgdown in .Rbuildignore.\n  ",
+    "Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.\n  ",
+    "Delete NAMESPACE so it can be auto-generated via devtools.\n  ",
+    "Commit changes, but hold off on cran-comments.md and revdep until meaningful."
   )
   cat(x)
 }
