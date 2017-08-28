@@ -8,7 +8,6 @@
 ^appveyor\.yml$
 ^\.travis\.yml$
 ^codecov\.yml$
-^C:\github\snapmeta\docs$
 ^\.lintr$
 ^inst/\.lintr$
 ^docs$
