@@ -16,6 +16,8 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
+  - travis-tool.sh install_github r-lib/usethis
+  - travis-tool.sh install_github hadley/pkgdown
   - travis-tool.sh install_deps
 
 test_script:
