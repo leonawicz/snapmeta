@@ -13,8 +13,8 @@
 #' @export
 #'
 #' @examples
-#' new_pkg_reminder()
-new_pkg_reminder <- function(pkg=basename(getwd()), account="leonawicz"){
+#' reminders()
+reminders <- function(pkg=basename(getwd()), account="leonawicz"){
   x <- paste0(
     "1. Create a new R package via New Project > R Package\n  with 'Create a git repository' checked.\n",
     "2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.\n",
@@ -31,7 +31,8 @@ new_pkg_reminder <- function(pkg=basename(getwd()), account="leonawicz"){
     "Delete absolute path to `docs` created by pkgdown in .Rbuildignore.\n  ",
     "Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.\n  ",
     "Delete NAMESPACE so it can be auto-generated via devtools.\n  ",
-    "Commit changes, but hold off on cran-comments.md and revdep until meaningful."
+    "At least one inital unit test is required to pass build.\n  ",
+    "Commit changes, but hold off on cran-comments.md and revdep until meaningful.\n"
   )
   cat(x)
 }
@@ -98,7 +99,7 @@ use_authors <- function(authors=pkg_authors(), cph=pkg_cph()){
   usethis::use_mit_license(cph)
 }
 
-#' Add `code{lintr} to R package
+#' Add \code{lintr} to R package
 #'
 #' Add scaffolding for \code{lintr} package usage to R package.
 #'
