@@ -1,0 +1,16 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^cran-comments\.md$
+^data-raw$
+^README\.Rmd$
+^revdep$
+^appveyor\.yml$
+^\.travis\.yml$
+^codecov\.yml$
+^C:\github\snapmeta\docs$
+^\.lintr$
+^inst/\.lintr$
+^docs$
+^pkgdown$
+^clone_notes\.md$
