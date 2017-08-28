@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' get_pkgs()
+#' sv_local_pkgs()
 sv_local_pkgs <- function(base_path="../", self = TRUE){
   x <- list.files(base_path, pattern="^snap*")
   if(!self) x <- x[x != basename(getwd())]
@@ -32,7 +32,7 @@ sv_local_pkgs <- function(base_path="../", self = TRUE){
 #' @export
 #'
 #' @examples
-#' sv_sections
+#' sv_pkgs
 sv_pkgs <- function(){
   secnames <- c("core", "functions", "data", "satellite")
   sections <- list(

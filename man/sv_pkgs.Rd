@@ -18,5 +18,5 @@ and whether local git repositories/R projects sharing the same parent directory 
 It includes SNAPverse satellite packages.
 }
 \examples{
-sv_sections
+sv_pkgs
 }

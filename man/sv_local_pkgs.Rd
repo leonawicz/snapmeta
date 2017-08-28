@@ -23,5 +23,5 @@ directory as the current package/working directory. If \code{self = TRUE} (defau
 the current working directory will be included in the list if applicable.
 }
 \examples{
-get_pkgs()
+sv_local_pkgs()
 }
