@@ -5,7 +5,7 @@
 \title{Package author and copyright holder/funder}
 \usage{
 pkg_authors(first = "Matthew", last = "Leonawicz",
-  email = "mfleonawicz@alaska.edu", cph_fnd = "SNAP")
+  email = "mfleonawicz@alaska.edu", cph_fnd = pkg_cph())
 }
 \arguments{
 \item{first}{author first name.}

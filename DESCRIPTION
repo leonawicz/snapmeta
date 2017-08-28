@@ -1,9 +1,9 @@
 Package: snapmeta
 Version: 0.0.0.9000
-Title: What the Package Does (one line, title case)
-Description: What the package does (one paragraph).
+Title: Utilities For SNAPverse Development
+Description: This package contains a collection of utility functions for the development of other SNAPverse packages.
 Authors@R: c(person("Matthew", "Leonawicz", email = "mfleonawicz@alaska.edu", role = c("aut", "cre")),
-    person("SNAP", role = c("cph", "fnd"))
+    person("Scenarios Network for Alaska and Arctic Planning", role = c("cph", "fnd"))
     )
 Depends: R (>= 3.4.1)
 License: MIT + file LICENSE

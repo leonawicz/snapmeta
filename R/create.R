@@ -52,7 +52,8 @@ new_pkg_reminder <- function(pkg=basename(getwd()), account="leonawicz"){
 #'
 #' @examples
 #' \dontrun{pkg_authors()}
-pkg_authors <- function(first="Matthew", last="Leonawicz", email="mfleonawicz@alaska.edu", cph_fnd="SNAP"){
+pkg_authors <- function(first="Matthew", last="Leonawicz", email="mfleonawicz@alaska.edu",
+                        cph_fnd=pkg_cph()){
   list(
     "Authors@R"=paste0(
       "c(",
