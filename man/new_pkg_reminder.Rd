@@ -12,7 +12,7 @@ new_pkg_reminder(pkg = basename(getwd()), account = "leonawicz")
 \item{account}{defaults to "leonawicz".}
 }
 \value{
-\codee{cat} a list of steps to the console.
+\code{cat} a list of steps to the console.
 }
 \description{
 Print out a list of steps to take upon creating a new R package in RStudio.
