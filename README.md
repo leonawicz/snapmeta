@@ -34,7 +34,7 @@ reminders()
 #>   Use default settings (Do not create README.md).
 #>   Set docs/ directory for hosting project website
 #> 4. Then in git shell, enter:
-#>   git remote add origin git@github.com:leonawicz/github.git
+#>   git remote add origin git@github.com:leonawicz/snapmeta.git
 #>   git push -u origin master
 #> 5. Then return to R console and run:
 #>   snapmeta::use_these()
@@ -82,7 +82,7 @@ sv_pkgs()
 #> 14  maputils satellite FALSE
 #> 15 snaputils satellite FALSE
 #> 16  snapsite satellite FALSE
-#> 17  snapmeta satellite FALSE
+#> 17  snapmeta satellite  TRUE
 #> 18  snapapps satellite FALSE
 ```
 
@@ -90,5 +90,5 @@ The table includes columns giving the section of the verse a package belongs to 
 
 ``` r
 sv_local_pkgs()
-#> character(0)
+#> [1] "snapmeta"
 ```
