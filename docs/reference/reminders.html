@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Package author and copyright holder/funder — pkg_authors â€¢ snapmeta</title>
+<title>New R package reminders — reminders â€¢ snapmeta</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -86,50 +86,58 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Package author and copyright holder/funder</h1>
+    <h1>New R package reminders</h1>
     </div>
 
     
-    <p>Specify the package author and the copyright holder/funder.</p>
+    <p>Print out a list of steps to take upon creating a new R package in RStudio.</p>
     
 
-    <pre class="usage"><span class='fu'>pkg_authors</span>(<span class='kw'>first</span> <span class='kw'>=</span> <span class='st'>"Matthew"</span>, <span class='kw'>last</span> <span class='kw'>=</span> <span class='st'>"Leonawicz"</span>,
-  <span class='kw'>email</span> <span class='kw'>=</span> <span class='st'>"mfleonawicz@alaska.edu"</span>, <span class='kw'>cph_fnd</span> <span class='kw'>=</span> <span class='fu'><a href='pkg_cph.html'>pkg_cph</a></span>())</pre>
+    <pre class="usage"><span class='fu'>reminders</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='fu'>basename</span>(<span class='fu'>getwd</span>()), <span class='kw'>account</span> <span class='kw'>=</span> <span class='st'>"leonawicz"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>first</th>
-      <td><p>author first name.</p></td>
+      <th>pkg</th>
+      <td><p>defaults to working directory.</p></td>
     </tr>
     <tr>
-      <th>last</th>
-      <td><p>author last name.</p></td>
-    </tr>
-    <tr>
-      <th>email</th>
-      <td><p>author email address</p></td>
-    </tr>
-    <tr>
-      <th>cph_fnd</th>
-      <td><p>copyright holder and funder.</p></td>
+      <th>account</th>
+      <td><p>defaults to "leonawicz".</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a list to be used by <code>use_authors</code>.</p>
+    <p><code>cat</code> a list of steps to the console.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function is specific to the SNAPverse and is used as a default argument to <code>use_authors</code>.</p>
+    <p>Adding the repo on GitHub (step 3) can be done any time prior to step 4.
+The suggested steps are mostly universal except for the final two, which cater to SNAPverse defaults.
+See <code>use_these</code> for details on defaults.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>pkg_authors</span>()
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>reminders</span>()</div><div class='output co'>#&gt; 1. Create a new R package via New Project &gt; R Package
+#&gt;   with 'Create a git repository' checked.
+#&gt; 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.
+#&gt; 3. Add the repo on GitHub:
+#&gt;   Use default settings (Do not create README.md).
+#&gt;   Set docs/ directory for hosting project website
+#&gt; 4. Then in git shell, enter:
+#&gt;   git remote add origin git@github.com:leonawicz/reference.git
+#&gt;   git push -u origin master
+#&gt; 5. Then return to R console and run:
+#&gt;   snapmeta::use_these()
+#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.
+#&gt; 7. Check the following:
+#&gt;   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.
+#&gt;   Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
+#&gt;   Delete NAMESPACE so it can be auto-generated via devtools.
+#&gt;   At least one inital unit test is required to pass build.
+#&gt;   Commit changes, but hold off on cran-comments.md and revdep until meaningful.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

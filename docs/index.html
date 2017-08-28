@@ -73,13 +73,76 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#snapmeta" class="anchor"></a>snapmeta</h1></div>
 
-<p>The goal of snapmeta is to …</p>
+<p><code>snapmeta</code> contains a collection of utility functions for the development of other SNAPverse packages.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install snapmeta from github with:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools')</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"leonawicz/snapmeta"</span>)</code></pre></div>
+</div>
+<div id="usage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h2>
+<div id="package-setup" class="section level3">
+<h3 class="hasAnchor">
+<a href="#package-setup" class="anchor"></a>Package setup</h3>
+<p>First, take a look at the helpful reminders in the console output from <code>new_pkg_reminder</code>. It will be somewhat specific to your account and project if you pass arguments. For example, using my defaults:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(snapmeta)
+<span class="kw"><a href="reference/reminders.html">reminders</a></span>()
+<span class="co">#&gt; 1. Create a new R package via New Project &gt; R Package</span>
+<span class="co">#&gt;   with 'Create a git repository' checked.</span>
+<span class="co">#&gt; 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.</span>
+<span class="co">#&gt; 3. Add the repo on GitHub:</span>
+<span class="co">#&gt;   Use default settings (Do not create README.md).</span>
+<span class="co">#&gt;   Set docs/ directory for hosting project website</span>
+<span class="co">#&gt; 4. Then in git shell, enter:</span>
+<span class="co">#&gt;   git remote add origin git@github.com:leonawicz/snapmeta.git</span>
+<span class="co">#&gt;   git push -u origin master</span>
+<span class="co">#&gt; 5. Then return to R console and run:</span>
+<span class="co">#&gt;   snapmeta::use_these()</span>
+<span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.</span>
+<span class="co">#&gt; 7. Check the following:</span>
+<span class="co">#&gt;   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.</span>
+<span class="co">#&gt;   Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.</span>
+<span class="co">#&gt;   Delete NAMESPACE so it can be auto-generated via devtools.</span>
+<span class="co">#&gt;   At least one inital unit test is required to pass build.</span>
+<span class="co">#&gt;   Commit changes, but hold off on cran-comments.md and revdep until meaningful.</span></code></pre></div>
+<p>This should all be familiar if you develop R packages, but it can be easy to occasionally neglect a step. The recommendations are not completely universal, however, and cater specifically to SNAPverse package development.</p>
+<p>If it meets all needs, run:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/use_these.html">use_these</a></span>()</code></pre></div>
+<p>If something different is needed, ignore the above wrapper function. Instead, make individual calls to whichever package setup functions are required.</p>
+</div>
+<div id="getting-info-from-the-verse" class="section level3">
+<h3 class="hasAnchor">
+<a href="#getting-info-from-the-verse" class="anchor"></a>Getting info from the verse</h3>
+<p>A table of all SNAPverse packages can be obtained by:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_pkgs.html">sv_pkgs</a></span>()
+<span class="co">#&gt; # A tibble: 18 x 3</span>
+<span class="co">#&gt;          pkg   section local</span>
+<span class="co">#&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt;</span>
+<span class="co">#&gt;  1 snapverse      core FALSE</span>
+<span class="co">#&gt;  2  snaplite      core FALSE</span>
+<span class="co">#&gt;  3  snapdata      core FALSE</span>
+<span class="co">#&gt;  4  snapfuns functions FALSE</span>
+<span class="co">#&gt;  5  snapprep functions FALSE</span>
+<span class="co">#&gt;  6  alfresco functions FALSE</span>
+<span class="co">#&gt;  7  snapclim      data FALSE</span>
+<span class="co">#&gt;  8  snapfire      data FALSE</span>
+<span class="co">#&gt;  9  snappoly      data FALSE</span>
+<span class="co">#&gt; 10  snapmaps      data FALSE</span>
+<span class="co">#&gt; 11  snapdist      data FALSE</span>
+<span class="co">#&gt; 12   rvtable satellite FALSE</span>
+<span class="co">#&gt; 13  apputils satellite FALSE</span>
+<span class="co">#&gt; 14  maputils satellite FALSE</span>
+<span class="co">#&gt; 15 snaputils satellite FALSE</span>
+<span class="co">#&gt; 16  snapsite satellite FALSE</span>
+<span class="co">#&gt; 17  snapmeta satellite  TRUE</span>
+<span class="co">#&gt; 18  snapapps satellite FALSE</span></code></pre></div>
+<p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
+<span class="co">#&gt; [1] "snapmeta"</span></code></pre></div>
+</div>
 </div>
 </div>
 </div>

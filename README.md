@@ -5,7 +5,7 @@ snapmeta
 
 [![Travis-CI Build Status](https://travis-ci.org/leonawicz/snapmeta.svg?branch=master)](https://travis-ci.org/leonawicz/snapmeta) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/leonawicz/snapmeta?branch=master&svg=true)](https://ci.appveyor.com/project/leonawicz/snapmeta) [![Coverage Status](https://img.shields.io/codecov/c/github/leonawicz/snapmeta/master.svg)](https://codecov.io/github/leonawicz/snapmeta?branch=master)
 
-The goal of snapmeta is to ...
+`snapmeta` contains a collection of utility functions for the development of other SNAPverse packages.
 
 Installation
 ------------
@@ -13,6 +13,82 @@ Installation
 You can install snapmeta from github with:
 
 ``` r
-# install.packages("devtools")
+# install.packages('devtools')
 devtools::install_github("leonawicz/snapmeta")
+```
+
+Usage
+-----
+
+### Package setup
+
+First, take a look at the helpful reminders in the console output from `new_pkg_reminder`. It will be somewhat specific to your account and project if you pass arguments. For example, using my defaults:
+
+``` r
+library(snapmeta)
+reminders()
+#> 1. Create a new R package via New Project > R Package
+#>   with 'Create a git repository' checked.
+#> 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.
+#> 3. Add the repo on GitHub:
+#>   Use default settings (Do not create README.md).
+#>   Set docs/ directory for hosting project website
+#> 4. Then in git shell, enter:
+#>   git remote add origin git@github.com:leonawicz/github.git
+#>   git push -u origin master
+#> 5. Then return to R console and run:
+#>   snapmeta::use_these()
+#> 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.
+#> 7. Check the following:
+#>   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.
+#>   Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
+#>   Delete NAMESPACE so it can be auto-generated via devtools.
+#>   At least one inital unit test is required to pass build.
+#>   Commit changes, but hold off on cran-comments.md and revdep until meaningful.
+```
+
+This should all be familiar if you develop R packages, but it can be easy to occasionally neglect a step. The recommendations are not completely universal, however, and cater specifically to SNAPverse package development.
+
+If it meets all needs, run:
+
+``` r
+use_these()
+```
+
+If something different is needed, ignore the above wrapper function. Instead, make individual calls to whichever package setup functions are required.
+
+### Getting info from the verse
+
+A table of all SNAPverse packages can be obtained by:
+
+``` r
+sv_pkgs()
+#> # A tibble: 18 x 3
+#>          pkg   section local
+#>        <chr>     <chr> <lgl>
+#>  1 snapverse      core FALSE
+#>  2  snaplite      core FALSE
+#>  3  snapdata      core FALSE
+#>  4  snapfuns functions FALSE
+#>  5  snapprep functions FALSE
+#>  6  alfresco functions FALSE
+#>  7  snapclim      data FALSE
+#>  8  snapfire      data FALSE
+#>  9  snappoly      data FALSE
+#> 10  snapmaps      data FALSE
+#> 11  snapdist      data FALSE
+#> 12   rvtable satellite FALSE
+#> 13  apputils satellite FALSE
+#> 14  maputils satellite FALSE
+#> 15 snaputils satellite FALSE
+#> 16  snapsite satellite FALSE
+#> 17  snapmeta satellite FALSE
+#> 18  snapapps satellite FALSE
+```
+
+The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:
+
+``` r
+sv_local_pkgs()
+#> character(0)
 ```

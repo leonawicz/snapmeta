@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Package author and copyright holder/funder — pkg_authors â€¢ snapmeta</title>
+<title>List local SNAPverse packages — sv_local_pkgs â€¢ snapmeta</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -86,50 +86,41 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Package author and copyright holder/funder</h1>
+    <h1>List local SNAPverse packages</h1>
     </div>
 
     
-    <p>Specify the package author and the copyright holder/funder.</p>
+    <p>Generate a list of existing local SNAPverse packages.</p>
     
 
-    <pre class="usage"><span class='fu'>pkg_authors</span>(<span class='kw'>first</span> <span class='kw'>=</span> <span class='st'>"Matthew"</span>, <span class='kw'>last</span> <span class='kw'>=</span> <span class='st'>"Leonawicz"</span>,
-  <span class='kw'>email</span> <span class='kw'>=</span> <span class='st'>"mfleonawicz@alaska.edu"</span>, <span class='kw'>cph_fnd</span> <span class='kw'>=</span> <span class='fu'><a href='pkg_cph.html'>pkg_cph</a></span>())</pre>
+    <pre class="usage"><span class='fu'>sv_local_pkgs</span>(<span class='kw'>base_path</span> <span class='kw'>=</span> <span class='st'>"../"</span>, <span class='kw'>self</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>first</th>
-      <td><p>author first name.</p></td>
+      <th>base_path</th>
+      <td><p>defaults to the parent directory of the working directory.</p></td>
     </tr>
     <tr>
-      <th>last</th>
-      <td><p>author last name.</p></td>
-    </tr>
-    <tr>
-      <th>email</th>
-      <td><p>author email address</p></td>
-    </tr>
-    <tr>
-      <th>cph_fnd</th>
-      <td><p>copyright holder and funder.</p></td>
+      <th>self</th>
+      <td><p>logical, include the currently loaded package (working directory) if in the SNAPverse.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a list to be used by <code>use_authors</code>.</p>
+    <p>a character vector.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function is specific to the SNAPverse and is used as a default argument to <code>use_authors</code>.</p>
+    <p>This function looks for packages beginning with the expression <code>^snap*</code> and sharing the same parent
+directory as the current package/working directory. If <code>self = TRUE</code> (default),
+the current working directory will be included in the list if applicable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>pkg_authors</span>()
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>get_pkgs</span>()</div><div class='output co'>#&gt; <span class='error'>Error in get_pkgs(): could not find function "get_pkgs"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

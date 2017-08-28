@@ -2,7 +2,7 @@
 % Please edit documentation in R/create.R
 \name{use_lintr}
 \alias{use_lintr}
-\title{Add `code{lintr} to R package}
+\title{Add \code{lintr} to R package}
 \usage{
 use_lintr(base_path = ".")
 }
