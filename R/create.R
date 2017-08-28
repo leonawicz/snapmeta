@@ -16,21 +16,23 @@
 #' reminders()
 reminders <- function(pkg=basename(getwd()), account="leonawicz"){
   x <- paste0(
-    "1. Create a new R package via New Project > R Package\n  with 'Create a git repository' checked.\n",
-    "2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.\n",
+    "1. Create a new R package via RStudio > New Project > R Package\n  with 'Create a git repository' checked.\n",
+    "2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.\n\n",
     "3. Add the repo on GitHub:\n  ",
     "Use default settings (Do not create README.md).\n  ",
-    "Set docs/ directory for hosting project website\n",
+    "Set docs/ directory for hosting project website\n\n",
     "4. Then in git shell, enter:\n  ",
     paste0("git remote add origin git@github.com:", account, "/", pkg, ".git\n  "),
-    "git push -u origin master\n",
+    "git push -u origin master\n\n",
     "5. Then return to R console and run:\n  ",
-    "snapmeta::use_these()\n",
+    "snapmeta::use_these()\n    ",
+    "NOTE: Run Rstudio as Administator in Windows for this session so that usethese() can create a lintr symbolic link.\n\n",
     "6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.\n",
     "7. Check the following:\n  ",
     "Delete absolute path to `docs` created by pkgdown in .Rbuildignore.\n  ",
-    "Make initial updates to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.\n  ",
+    "Make initial updates to DESCRIPTION and to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.\n  ",
     "Delete NAMESPACE so it can be auto-generated via devtools.\n  ",
+    "Delete any Hello World files.\n  ",
     "At least one inital unit test is required to pass build.\n  ",
     "Commit changes, but hold off on cran-comments.md and revdep until meaningful.\n"
   )
