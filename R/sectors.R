@@ -1,8 +1,16 @@
-# Code snippets borrowed and modified from tidyverse: https://github.com/tidyverse
-# but slightly more general to handle different SNAPverse package subsets (sectors of verse).
-# Cannot import functions from tidyverse because they are not exported; will need to self-maintain.
-# Only loads sector packages tidily; does not check for conflicts.
-
+#' Attach SNAPverse member packages
+#'
+#' Attach SNAPverse member packages for different sectors of the verse.
+#' There are three sector packages: \code{snapverse}, \code{snaplite} and \code{snapdata}.
+#' Each passes a list of packages via \code{core} to \code{verse_attach}.
+#' See the respective packages for details.
+#'
+#' Verse attachment code snippets are borrowed and modified from tidyverse: https://github.com/tidyverse
+#' but are slightly more general to handle different SNAPverse package subsets (sectors of verse).
+#' The functionality in \code{snapmeta} only loads sector packages tidily; it does not check for conflicts.
+#'
+#' @param core character, vector of packages that defines part of the SNAPverse.
+#'
 #' @export
 verse_attach <- function(core) {
   versions <- vapply(core, package_version, character(1))
@@ -26,6 +34,18 @@ verse_attach <- function(core) {
   )
 
   invisible()
+}
+
+#' Check if package is attached
+#'
+#' Checks if a package is attached.
+#'
+#' @param x character, package name.
+#'
+#' @export
+#' @rdname verse_attach
+is_attached <- function(x) {
+  paste0("package:", x) %in% search()
 }
 
 package_version <- function(x) {
@@ -68,11 +88,6 @@ os <- function() {
   x <- gsub(" [(]build \\d+[)]", "", x)
 
   x
-}
-
-#' @export
-is_attached <- function(x) {
-  paste0("package:", x) %in% search()
 }
 
 startup_message <- function(...) {
