@@ -143,7 +143,7 @@ use_lintr <- function(base_path = ".", use_testthat = TRUE){
     "context(\"lints\")\n  ",
     "test_that(\"Package Style\", {\n    ",
     "lintr::expect_lint_free()\n  ",
-    "})\n", "})\n"))
+    "})\n", "}\n"))
   sink()
 }
 
