@@ -16,6 +16,7 @@ Imports:
     pkgdown,
     usethis,
     devtools,
+    crayon,
     tibble
 Suggests: 
     testthat,
@@ -24,6 +25,7 @@ Suggests:
     rmarkdown
 Remotes:
     r-lib/usethis,
-    hadley/pkgdown
+    hadley/pkgdown,
+    gaborcsardi/crayon
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
