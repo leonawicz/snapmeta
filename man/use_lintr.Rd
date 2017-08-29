@@ -4,10 +4,12 @@
 \alias{use_lintr}
 \title{Add \code{lintr} to R package}
 \usage{
-use_lintr(base_path = ".")
+use_lintr(base_path = ".", use_testthat = TRUE)
 }
 \arguments{
 \item{base_path}{package root directory.}
+
+\item{use_testthat}{logical, if \code{TRUE} (default), adds \code{tests/testthat/test-lintr.R} to package.}
 }
 \value{
 side effect of adding \code{lintr} scaffolding to package.
@@ -18,7 +20,7 @@ Add scaffolding for \code{lintr} package usage to R package.
 \details{
 This function creates a template \code{.lintr} file for SNAPverse packages inside \code{inst} and
 adds a symbolic link to this file in the package root directory.
-It also adds both files to \code{.Rbuildignore}.
+It also adds both files to \code{.Rbuildignore} and creates a unit test for lint-free package code.
 }
 \examples{
 \dontrun{use_lintr()}

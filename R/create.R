@@ -116,16 +116,17 @@ use_authors <- function(authors=pkg_authors(), cph=pkg_cph()){
 #'
 #' This function creates a template \code{.lintr} file for SNAPverse packages inside \code{inst} and
 #' adds a symbolic link to this file in the package root directory.
-#' It also adds both files to \code{.Rbuildignore}.
+#' It also adds both files to \code{.Rbuildignore} and creates a unit test for lint-free package code.
 #'
 #' @param base_path package root directory.
+#' @param use_testthat logical, if \code{TRUE} (default), adds \code{tests/testthat/test-lintr.R} to package.
 #'
 #' @return side effect of adding \code{lintr} scaffolding to package.
 #' @export
 #'
 #' @examples
 #' \dontrun{use_lintr()}
-use_lintr <- function(base_path = "."){
+use_lintr <- function(base_path = ".", use_testthat = TRUE){
   dir.create(file.path(base_path, "inst"), showWarnings=FALSE)
   sink("inst/.lintr")
   cat(paste0("linters: with_defaults(\n  ",
@@ -137,6 +138,13 @@ use_lintr <- function(base_path = "."){
   sink()
   if(!file.exists(".lintr")) file.symlink("inst/.lintr", ".lintr")
   usethis::use_build_ignore(c(".lintr", "inst/.lintr"))
+  sink("tests/testthat/test-lintr.R")
+  cat(paste0("if (requireNamespace(\"lintr\", quietly = TRUE)) {\n  ",
+    "context(\"lints\")\n  ",
+    "test_that(\"Package Style\", {\n    ",
+    "lintr::expect_lint_free()\n  ",
+    "})\n", "})\n"))
+  sink()
 }
 
 #' Add \code{clone_notes.md} to R package
