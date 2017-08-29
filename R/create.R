@@ -7,7 +7,7 @@
 #' See \code{use_these} for details on defaults.
 #'
 #' @param pkg defaults to working directory.
-#' @param account defaults to "leonawicz".
+#' @param account GitHub account name, defaults to "leonawicz".
 #'
 #' @return \code{cat} a list of steps to the console.
 #' @export
@@ -27,7 +27,8 @@ reminders <- function(pkg=basename(getwd()), account="leonawicz"){
     "5. Then return to R console and run:\n  ",
     "snapmeta::use_these()\n    ",
     "NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.\n\n",
-    "6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.\n",
+    "6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.\n  ",
+    "Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.\n",
     "7. Check the following:\n  ",
     "Delete absolute path to `docs` created by pkgdown in .Rbuildignore.\n  ",
     "Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.\n  ",
@@ -37,6 +38,14 @@ reminders <- function(pkg=basename(getwd()), account="leonawicz"){
     "Commit changes, but hold off on cran-comments.md and revdep until meaningful.\n"
   )
   cat(x)
+}
+
+repo <- function(){
+  r <- git2r::repository(".", discover = TRUE)
+  remote <- git2r::remotes(r)
+  r <- git2r::remote_url(r, remote)
+  r <- strsplit(r, ":")[[1]][2]
+  list(account = dirname(r), repo=gsub("\\.git", "", basename(r)))
 }
 
 #' Package author and copyright holder/funder
@@ -203,8 +212,26 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
   usethis::use_appveyor()
   usethis::use_travis()
   usethis::use_coverage()
-  if(snapverse){
-    if(pkg != "snapmeta") usethis::use_package("snapmeta", "Suggests")
-    if(pkg != "snapsite") usethis::use_package("snapsite", "Suggests")
+
+  sector_pkgs <- dplyr::filter(sv_pkgs(), section == "sector")$pkg
+  if(snapverse & pkg != "snapmeta"){
+    if(pkg %in% sector_pkgs){
+      usethis::use_package("snapmeta")
+    } else {
+      usethis::use_package("snapmeta", "Suggests")
+    }
   }
+
+  r <- repo()
+  badges <- paste0("[![Travis-CI Build Status](https://travis-ci.org/", r$account,
+                   "/", r$repo, ".svg?branch=master)](https://travis-ci.org/",
+                   r$account, "/", r$repo, ")\n\n  ",
+  "[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/", r$account,
+  "/", r$repo, "?branch=master&svg=true)](https://ci.appveyor.com/project/", r$account,
+  "/", r$repo, ")\n\n  ",
+  "[![Coverage Status](https://img.shields.io/codecov/c/github/", r$account, "/", r$repo,
+  "/master.svg)](https://codecov.io/github/", r$account, "/", r$repo, "?branch=master)\n\n")
+  code_cov <- paste0("after_success:\n    ", "- Rscript -e 'covr::codecov()'\n")
+  cat(paste0("Add the following badges to README.Rmd:\n  ", badges,
+            "Add the following to .travis.yml:\n  ", code_cov))
 }
