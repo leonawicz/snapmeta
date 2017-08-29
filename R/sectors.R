@@ -3,6 +3,7 @@
 # Cannot import functions from tidyverse because they are not exported; will need to self-maintain.
 # Only loads sector packages tidily; does not check for conflicts.
 
+#' @export
 verse_attach <- function(core) {
   versions <- vapply(core, package_version, character(1))
   packages <- paste0(
@@ -69,6 +70,7 @@ os <- function() {
   x
 }
 
+#' @export
 is_attached <- function(x) {
   paste0("package:", x) %in% search()
 }

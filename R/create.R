@@ -221,7 +221,7 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
   usethis::use_travis()
   usethis::use_coverage()
 
-  sector_pkgs <- dplyr::filter(sv_pkgs(), section == "sector")$pkg
+  sector_pkgs <- dplyr::filter(sv_pkgs(), (!! as.name("type")) == "sector")$pkg
   if(snapverse & pkg != "snapmeta"){
     if(pkg %in% sector_pkgs){
       usethis::use_package("snapmeta")
@@ -231,14 +231,14 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
   }
 
   r <- repo()
-  badges <- paste0("[![Travis-CI Build Status](https://travis-ci.org/", r$account,
+  badges <- paste0("[![Travis-CI Build Status](https://travis-ci.org/", r$account, # nolint start
                    "/", r$repo, ".svg?branch=master)](https://travis-ci.org/",
                    r$account, "/", r$repo, ")\n\n  ",
   "[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/", r$account,
   "/", r$repo, "?branch=master&svg=true)](https://ci.appveyor.com/project/", r$account,
   "/", r$repo, ")\n\n  ",
   "[![Coverage Status](https://img.shields.io/codecov/c/github/", r$account, "/", r$repo,
-  "/master.svg)](https://codecov.io/github/", r$account, "/", r$repo, "?branch=master)\n\n")
+  "/master.svg)](https://codecov.io/github/", r$account, "/", r$repo, "?branch=master)\n\n") # nolint end
   code_cov <- paste0("after_success:\n    ", "- Rscript -e 'covr::codecov()'\n")
   cat(paste0("Add the following badges to README.Rmd:\n  ", badges,
             "Add the following to .travis.yml:\n  ", code_cov))
