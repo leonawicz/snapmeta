@@ -106,10 +106,10 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt;   snapmeta::use_these()</span>
 <span class="co">#&gt;     </span><span class="al">NOTE</span><span class="co">: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.</span>
+<span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.</span>
 <span class="co">#&gt; 7. Check the following:</span>
 <span class="co">#&gt;   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.</span>
-<span class="co">#&gt;   Make initial updates to DESCRIPTION and to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.</span>
+<span class="co">#&gt;   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.</span>
 <span class="co">#&gt;   Delete NAMESPACE so it can be auto-generated via devtools.</span>
 <span class="co">#&gt;   Delete any Hello World files.</span>
 <span class="co">#&gt;   At least one inital unit test is required to pass build.</span>
@@ -127,9 +127,9 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt; # A tibble: 18 x 3</span>
 <span class="co">#&gt;          pkg   section local</span>
 <span class="co">#&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt;</span>
-<span class="co">#&gt;  1 snapverse      core FALSE</span>
-<span class="co">#&gt;  2  snaplite      core FALSE</span>
-<span class="co">#&gt;  3  snapdata      core FALSE</span>
+<span class="co">#&gt;  1 snapverse    sector  TRUE</span>
+<span class="co">#&gt;  2  snaplite    sector FALSE</span>
+<span class="co">#&gt;  3  snapdata    sector FALSE</span>
 <span class="co">#&gt;  4  snapfuns functions FALSE</span>
 <span class="co">#&gt;  5  snapprep functions FALSE</span>
 <span class="co">#&gt;  6  alfresco functions FALSE</span>
@@ -138,16 +138,16 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt;  9  snappoly      data FALSE</span>
 <span class="co">#&gt; 10  snapmaps      data FALSE</span>
 <span class="co">#&gt; 11  snapdist      data FALSE</span>
-<span class="co">#&gt; 12   rvtable satellite FALSE</span>
-<span class="co">#&gt; 13  apputils satellite FALSE</span>
-<span class="co">#&gt; 14  maputils satellite FALSE</span>
-<span class="co">#&gt; 15 snaputils satellite FALSE</span>
-<span class="co">#&gt; 16  snapsite satellite FALSE</span>
-<span class="co">#&gt; 17  snapmeta satellite  TRUE</span>
-<span class="co">#&gt; 18  snapapps satellite FALSE</span></code></pre></div>
+<span class="co">#&gt; 12  snapapps      apps FALSE</span>
+<span class="co">#&gt; 13   rvtable satellite FALSE</span>
+<span class="co">#&gt; 14  apputils satellite FALSE</span>
+<span class="co">#&gt; 15  maputils satellite FALSE</span>
+<span class="co">#&gt; 16 snaputils satellite FALSE</span>
+<span class="co">#&gt; 17  snapsite satellite FALSE</span>
+<span class="co">#&gt; 18  snapmeta satellite  TRUE</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
-<span class="co">#&gt; [1] "snapmeta"</span></code></pre></div>
+<span class="co">#&gt; [1] "snapmeta"  "snapverse"</span></code></pre></div>
 </div>
 </div>
 </div>

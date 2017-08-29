@@ -103,17 +103,24 @@
 
     <p>This function returns a 3-column data frame of all SNAPverse package names, their part of the verse,
 and whether local git repositories/R projects sharing the same parent directory are found for each.
-It includes SNAPverse satellite packages.</p>
+The list includes SNAPverse satellite packages, which are related to and often used in conjunction with,
+but not a strict part of the SNAPverse.</p>
+<p>The other packages are considered core packages of the SNAPverse and fall into of three sectors of the verse:
+functions, data or apps. The three packages listed as <code>sector</code> packages load different subsets of SNAPverse packages
+for convenience. <code>snapverse</code> loads functions, data and apps packages. <code>snaplite</code> loads only the functions packages.
+<code>snapdata</code> loads only the data packages. For most users, the packages most likely needed or of interst
+are <code>snapfuns</code>, <code>snapapps</code> and any of the data packages.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>sv_pkgs</span></div><div class='output co'>#&gt; function(){
-#&gt;   secnames &lt;- c("core", "functions", "data", "satellite")
+#&gt;   secnames &lt;- c("sector", "functions", "data", "apps", "satellite")
 #&gt;   sections &lt;- list(
-#&gt;     core=c("snapverse", "snaplite", "snapdata"),
+#&gt;     sector=c("snapverse", "snaplite", "snapdata"),
 #&gt;     functions=c("snapfuns", "snapprep", "alfresco"),
 #&gt;     data=c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
-#&gt;     satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapsite", "snapmeta", "snapapps")
+#&gt;     apps="snapapps",
+#&gt;     satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapsite", "snapmeta")
 #&gt; 
 #&gt;   )
 #&gt;   d &lt;- tibble::data_frame(

@@ -43,10 +43,10 @@ reminders()
 #>   snapmeta::use_these()
 #>     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.
 #> 
-#> 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd and add projects on respective sites.
+#> 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.
 #> 7. Check the following:
 #>   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.
-#>   Make initial updates to DESCRIPTION and to template files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
+#>   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
 #>   Delete NAMESPACE so it can be auto-generated via devtools.
 #>   Delete any Hello World files.
 #>   At least one inital unit test is required to pass build.
@@ -72,9 +72,9 @@ sv_pkgs()
 #> # A tibble: 18 x 3
 #>          pkg   section local
 #>        <chr>     <chr> <lgl>
-#>  1 snapverse      core FALSE
-#>  2  snaplite      core FALSE
-#>  3  snapdata      core FALSE
+#>  1 snapverse    sector  TRUE
+#>  2  snaplite    sector FALSE
+#>  3  snapdata    sector FALSE
 #>  4  snapfuns functions FALSE
 #>  5  snapprep functions FALSE
 #>  6  alfresco functions FALSE
@@ -83,18 +83,18 @@ sv_pkgs()
 #>  9  snappoly      data FALSE
 #> 10  snapmaps      data FALSE
 #> 11  snapdist      data FALSE
-#> 12   rvtable satellite FALSE
-#> 13  apputils satellite FALSE
-#> 14  maputils satellite FALSE
-#> 15 snaputils satellite FALSE
-#> 16  snapsite satellite FALSE
-#> 17  snapmeta satellite  TRUE
-#> 18  snapapps satellite FALSE
+#> 12  snapapps      apps FALSE
+#> 13   rvtable satellite FALSE
+#> 14  apputils satellite FALSE
+#> 15  maputils satellite FALSE
+#> 16 snaputils satellite FALSE
+#> 17  snapsite satellite FALSE
+#> 18  snapmeta satellite  TRUE
 ```
 
 The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:
 
 ``` r
 sv_local_pkgs()
-#> [1] "snapmeta"
+#> [1] "snapmeta"  "snapverse"
 ```

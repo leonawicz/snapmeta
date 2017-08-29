@@ -126,7 +126,8 @@
     <p><code>use_these</code> calls the following functions: <code>use_authors</code>, <code>use_github_links</code>, <code>use_clone_notes</code>,
 <code>use_cran_comments</code>,<code>use_data_raw</code>, <code>use_news_md</code>, <code>use_testthat</code>, <code>use_vignette</code>,
 <code>use_readme_rmd</code>, <code>use_revdep</code>, <code>use_lintr</code>, <code>use_appveyor</code>, <code>use_travis</code> and <code>use_coverage</code>.</p>
-<p>Authors, clone notes and <code>lintr</code> use are by <code>snapmeta</code> functions. The others are <code>usethis</code> package functions.
+<p>Authors, clone notes and <code>lintr</code> use are by <code>snapmeta</code> functions. The others are <code>usethis</code> package functions,
+except for <code>use_vignettes</code>, which still relies on <code>devtools</code>.
 <code>pkgdown</code> for R package website building is also initialized, using a <code>pkgdown</code> directory in the package root
 directory containing template <code>_pkgdown.yml</code> and <code>extra.css</code> files relevant to the SNAPverse.
 The <code>docs</code> directory is used for website files and should be specified likewise in the repository settings on GitHub.
