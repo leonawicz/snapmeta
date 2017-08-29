@@ -157,7 +157,7 @@ use_clone_notes <- function(){
 #' \code{use_readme_rmd}, \code{use_revdep}, \code{use_lintr}, \code{use_appveyor}, \code{use_travis} and \code{use_coverage}.
 #'
 #' Authors, clone notes and \code{lintr} use are by \code{snapmeta} functions. The others are \code{usethis} package functions,
-#' except for \code{use_vignettes}, which still relies \code{devtools}.
+#' except for \code{use_vignettes}, which still relies on \code{devtools}.
 #' \code{pkgdown} for R package website building is also initialized, using a \code{pkgdown} directory in the package root
 #' directory containing template \code{_pkgdown.yml} and \code{extra.css} files relevant to the SNAPverse.
 #' The \code{docs} directory is used for website files and should be specified likewise in the repository settings on GitHub.

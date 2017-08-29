@@ -26,7 +26,14 @@ sv_local_pkgs <- function(base_path="../", self = TRUE){
 #'
 #' This function returns a 3-column data frame of all SNAPverse package names, their part of the verse,
 #' and whether local git repositories/R projects sharing the same parent directory are found for each.
-#' It includes SNAPverse satellite packages.
+#' The list includes SNAPverse satellite packages, which are related to and often used in conjunction with,
+#' but not a strict part of the SNAPverse.
+#'
+#' The other packages are considered core packages of the SNAPverse and fall into of three sectors of the verse:
+#' functions, data or apps. The three packages listed as \code{sector} packages load different subsets of SNAPverse packages
+#' for convenience. \code{snapverse} loads functions, data and apps packages. \code{snaplite} loads only the functions packages.
+#' \code{snapdata} loads only the data packages. For most users, the packages most likely needed or of interst
+#' are \code{snapfuns}, \code{snapapps} and any of the data packages.
 #'
 #' @return a data frame.
 #' @export
@@ -34,12 +41,13 @@ sv_local_pkgs <- function(base_path="../", self = TRUE){
 #' @examples
 #' sv_pkgs
 sv_pkgs <- function(){
-  secnames <- c("core", "functions", "data", "satellite")
+  secnames <- c("sector", "functions", "data", "apps", "satellite")
   sections <- list(
-    core=c("snapverse", "snaplite", "snapdata"),
+    sector=c("snapverse", "snaplite", "snapdata"),
     functions=c("snapfuns", "snapprep", "alfresco"),
     data=c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
-    satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapsite", "snapmeta", "snapapps")
+    apps="snapapps",
+    satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapsite", "snapmeta")
 
   )
   d <- tibble::data_frame(
