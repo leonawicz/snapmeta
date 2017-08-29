@@ -20,7 +20,9 @@ Imports:
     tibble,
     rstudioapi,
     git2r,
-    dplyr
+    dplyr,
+    magrittr,
+    rlang
 Suggests: 
     testthat,
     covr,
