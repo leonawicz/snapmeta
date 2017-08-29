@@ -156,7 +156,8 @@ use_clone_notes <- function(){
 #' \code{use_cran_comments},\code{use_data_raw}, \code{use_news_md}, \code{use_testthat}, \code{use_vignette},
 #' \code{use_readme_rmd}, \code{use_revdep}, \code{use_lintr}, \code{use_appveyor}, \code{use_travis} and \code{use_coverage}.
 #'
-#' Authors, clone notes and \code{lintr} use are by \code{snapmeta} functions. The others are \code{usethis} package functions.
+#' Authors, clone notes and \code{lintr} use are by \code{snapmeta} functions. The others are \code{usethis} package functions,
+#' except for \code{use_vignettes}, which still relies \code{devtools}.
 #' \code{pkgdown} for R package website building is also initialized, using a \code{pkgdown} directory in the package root
 #' directory containing template \code{_pkgdown.yml} and \code{extra.css} files relevant to the SNAPverse.
 #' The \code{docs} directory is used for website files and should be specified likewise in the repository settings on GitHub.
@@ -189,7 +190,7 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
   usethis::use_data_raw()
   usethis::use_news_md()
   usethis::use_testthat()
-  if(!file.exists(paste0("vignettes/", pkg, ".Rmd"))) usethis::use_vignette(pkg)
+  if(!file.exists(paste0("vignettes/", pkg, ".Rmd"))) devtools::use_vignette(pkg)
   usethis::use_readme_rmd()
   usethis::use_revdep()
   snapmeta::use_lintr()
