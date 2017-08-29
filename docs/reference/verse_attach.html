@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Location in the SNAPverse — sv_pkgs â€¢ snapmeta</title>
+<title>Attach SNAPverse member packages — verse_attach â€¢ snapmeta</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -86,62 +86,49 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Location in the SNAPverse</h1>
+    <h1>Attach SNAPverse member packages</h1>
     </div>
 
     
-    <p>List the packages in and around the SNAPverse and their section of the verse.</p>
+    <p>Attach SNAPverse member packages for different sectors of the verse.
+There are three sector packages: <code>snapverse</code>, <code>snaplite</code> and <code>snapdata</code>.
+Each passes a list of packages via <code>core</code> to <code>verse_attach</code>.
+See the respective packages for details.</p>
+<p>Checks if a package is attached.</p>
     
 
-    <pre class="usage"><span class='fu'>sv_pkgs</span>()</pre>
-        
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <pre class="usage"><span class='fu'>verse_attach</span>(<span class='no'>core</span>)
 
-    <p>a data frame.</p>
+<span class='fu'>is_attached</span>(<span class='no'>x</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>core</th>
+      <td><p>character, vector of packages that defines part of the SNAPverse.</p></td>
+    </tr>
+    <tr>
+      <th>x</th>
+      <td><p>character, package name.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function returns a 3-column data frame of all SNAPverse package names, their part of the verse,
-and whether local git repositories/R projects sharing the same parent directory are found for each.
-The list includes SNAPverse satellite packages, which are related to and often used in conjunction with,
-but not a strict part of the SNAPverse.</p>
-<p>The other packages are considered core packages of the SNAPverse and fall into of three sectors of the verse:
-functions, data or apps. The three packages listed as <code>sector</code> packages load different subsets of SNAPverse packages
-for convenience. <code>snapverse</code> loads functions, data and apps packages. <code>snaplite</code> loads only the functions packages.
-<code>snapdata</code> loads only the data packages. For most users, the packages most likely needed or of interst
-are <code>snapfuns</code>, <code>snapapps</code> and any of the data packages.</p>
+    <p>Verse attachment code snippets are borrowed and modified from tidyverse: https://github.com/tidyverse
+but are slightly more general to handle different SNAPverse package subsets (sectors of verse).
+The functionality in <code>snapmeta</code> only loads sector packages tidily; it does not check for conflicts.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>sv_pkgs</span></div><div class='output co'>#&gt; function(){
-#&gt;   typenames &lt;- c("sector", "functions", "data", "apps", "satellite")
-#&gt;   type &lt;- list(
-#&gt;     sector=c("snapverse", "snaplite", "snapdata"),
-#&gt;     functions=c("snapfuns", "snapprep", "alfresco"),
-#&gt;     data=c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
-#&gt;     apps="snapapps",
-#&gt;     satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapsite", "snapmeta")
-#&gt; 
-#&gt;   )
-#&gt;   d &lt;- tibble::data_frame(
-#&gt;     pkg=unlist(type), type=rep(typenames, times=sapply(type, length)), local=FALSE
-#&gt;   )
-#&gt;   x &lt;- sv_local_pkgs()
-#&gt;   if(length(x)) d$local[d$pkg %in% x] &lt;- TRUE
-#&gt;   d
-#&gt; }
-#&gt; &lt;environment: namespace:snapmeta&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

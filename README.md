@@ -44,6 +44,7 @@ reminders()
 #>     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.
 #> 
 #> 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.
+#>   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.
 #> 7. Check the following:
 #>   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.
 #>   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
@@ -70,7 +71,7 @@ A table of all SNAPverse packages can be obtained by:
 ``` r
 sv_pkgs()
 #> # A tibble: 18 x 3
-#>          pkg   section local
+#>          pkg      type local
 #>        <chr>     <chr> <lgl>
 #>  1 snapverse    sector  TRUE
 #>  2  snaplite    sector FALSE

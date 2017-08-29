@@ -18,6 +18,9 @@ reference:
   contents:
   - sv_local_pkgs
   - sv_pkgs
+- title: Sector packages
+  contents:
+  - verse_attach
 
 navbar:
   type: inverse
