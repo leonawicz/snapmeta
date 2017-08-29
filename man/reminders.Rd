@@ -9,7 +9,7 @@ reminders(pkg = basename(getwd()), account = "leonawicz")
 \arguments{
 \item{pkg}{defaults to working directory.}
 
-\item{account}{defaults to "leonawicz".}
+\item{account}{GitHub account name, defaults to "leonawicz".}
 }
 \value{
 \code{cat} a list of steps to the console.
