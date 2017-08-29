@@ -14,13 +14,16 @@ Suggests:
     testthat,
     covr,
     knitr,
-    rmarkdown,
-    devtools
+    rmarkdown
 Url: https://github.com/leonawicz/snapmeta
 BugReports: https://github.com/leonawicz/snapmeta/issues
-RoxygenNote: 6.0.1
-VignetteBuilder: knitr
 Imports: 
     pkgdown,
     usethis,
+    devtools,
     tibble
+Remotes:
+    r-lib/usethis,
+    hadley/pkgdown
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
