@@ -1,4 +1,4 @@
-url: http://leonawicz.github.io/
+url: http://_ACCOUNT_.github.io/
 
 template:
   params:
@@ -8,4 +8,4 @@ navbar:
   type: inverse
   right:
     - icon: fa-github fa-lg
-      href: https://github.com/leonawicz/mapmate
+      href: https://github.com/_ACCOUNT_/_PACKAGE_

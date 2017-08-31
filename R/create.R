@@ -215,8 +215,17 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
   pdfiles <- list.files(file.path(system.file(package="snapmeta"), "resources/pkgdown"),
                         full.names = TRUE)
   dir.create("pkgdown", showWarnings = FALSE)
-  file.copy(pdfiles, file.path("pkgdown", basename(pdfiles)), overwrite = TRUE)
+  file.copy(pdfiles[2], file.path("pkgdown", basename(pdfiles[2])), overwrite = TRUE)
   usethis::use_build_ignore(c("docs", "pkgdown", "clone_notes.md"))
+  r <- repo()
+  file <- "pkgdown/_pkgdown.yml"
+  x <- paste(readLines(pdfiles[1]), collapse = "\n")
+  x <- gsub("_ACCOUNT_", r$account, x)
+  x <- gsub("_PACKAGE_", r$repo, x)
+  sink(file)
+  cat(paste0(x, "\n"))
+  sink()
+
   usethis::use_appveyor()
   usethis::use_travis()
   usethis::use_coverage()
@@ -230,7 +239,6 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
     }
   }
 
-  r <- repo()
   badges <- paste0("[![Travis-CI Build Status](https://travis-ci.org/", r$account, # nolint start
                    "/", r$repo, ".svg?branch=master)](https://travis-ci.org/",
                    r$account, "/", r$repo, ")\n\n  ",
