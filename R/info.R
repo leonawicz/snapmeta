@@ -47,7 +47,7 @@ sv_pkgs <- function(){
     functions=c("snapfuns", "snapprep", "alfresco"),
     data=c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
     apps="snapapps",
-    satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapsite", "snapmeta")
+    satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
 
   )
   d <- tibble::data_frame(
