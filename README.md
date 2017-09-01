@@ -5,7 +5,12 @@ snapmeta
 
 [![Travis-CI Build Status](https://travis-ci.org/leonawicz/snapmeta.svg?branch=master)](https://travis-ci.org/leonawicz/snapmeta) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/leonawicz/snapmeta?branch=master&svg=true)](https://ci.appveyor.com/project/leonawicz/snapmeta) [![Coverage Status](https://img.shields.io/codecov/c/github/leonawicz/snapmeta/master.svg)](https://codecov.io/github/leonawicz/snapmeta?branch=master)
 
-`snapmeta` contains a collection of utility functions for the development of other SNAPverse packages.
+`snapmeta` contains a collection of utility functions for the development of other SNAPverse packages. `snapmeta` is a satellite package of the SNAPverse collection of R packages.
+
+<p style="text-align:center;">
+<img src="man/figures/sv_satellites_dev.png">
+</p>
+<br>
 
 Installation
 ------------
@@ -81,21 +86,21 @@ sv_pkgs()
 #>  6  alfresco functions FALSE
 #>  7  snapclim      data FALSE
 #>  8  snapfire      data FALSE
-#>  9  snappoly      data FALSE
+#>  9  snappoly      data  TRUE
 #> 10  snapmaps      data FALSE
 #> 11  snapdist      data FALSE
 #> 12  snapapps      apps FALSE
 #> 13   rvtable satellite FALSE
 #> 14  apputils satellite FALSE
 #> 15  maputils satellite FALSE
-#> 16 snaputils satellite FALSE
-#> 17  snapsite satellite FALSE
-#> 18  snapmeta satellite  TRUE
+#> 16 snaputils satellite  TRUE
+#> 17  snapmeta satellite  TRUE
+#> 18  snapsite satellite  TRUE
 ```
 
 The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:
 
 ``` r
 sv_local_pkgs()
-#> [1] "snapmeta"  "snapverse"
+#> [1] "snapmeta"  "snappoly"  "snapsite"  "snaputils" "snapverse"
 ```

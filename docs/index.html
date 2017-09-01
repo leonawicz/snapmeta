@@ -47,7 +47,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/leonawicz/mapmate">
+  <a href="https://github.com/leonawicz/snapmeta">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -73,7 +73,9 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#snapmeta" class="anchor"></a>snapmeta</h1></div>
 
-<p><code>snapmeta</code> contains a collection of utility functions for the development of other SNAPverse packages.</p>
+<p><code>snapmeta</code> contains a collection of utility functions for the development of other SNAPverse packages. <code>snapmeta</code> is a satellite package of the SNAPverse collection of R packages.</p>
+<p style="text-align:center;">
+<img src="reference/figures/sv_satellites_dev.svg"></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -136,19 +138,19 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt;  6  alfresco functions FALSE</span>
 <span class="co">#&gt;  7  snapclim      data FALSE</span>
 <span class="co">#&gt;  8  snapfire      data FALSE</span>
-<span class="co">#&gt;  9  snappoly      data FALSE</span>
+<span class="co">#&gt;  9  snappoly      data  TRUE</span>
 <span class="co">#&gt; 10  snapmaps      data FALSE</span>
 <span class="co">#&gt; 11  snapdist      data FALSE</span>
 <span class="co">#&gt; 12  snapapps      apps FALSE</span>
 <span class="co">#&gt; 13   rvtable satellite FALSE</span>
 <span class="co">#&gt; 14  apputils satellite FALSE</span>
 <span class="co">#&gt; 15  maputils satellite FALSE</span>
-<span class="co">#&gt; 16 snaputils satellite FALSE</span>
-<span class="co">#&gt; 17  snapsite satellite FALSE</span>
-<span class="co">#&gt; 18  snapmeta satellite  TRUE</span></code></pre></div>
+<span class="co">#&gt; 16 snaputils satellite  TRUE</span>
+<span class="co">#&gt; 17  snapmeta satellite  TRUE</span>
+<span class="co">#&gt; 18  snapsite satellite  TRUE</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
-<span class="co">#&gt; [1] "snapmeta"  "snapverse"</span></code></pre></div>
+<span class="co">#&gt; [1] "snapmeta"  "snappoly"  "snapsite"  "snaputils" "snapverse"</span></code></pre></div>
 </div>
 </div>
 </div>
