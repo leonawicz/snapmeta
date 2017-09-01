@@ -69,7 +69,85 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-globe fa-lg"></span>
+     
+    SNAPverse
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="http://leonawicz.github.io/sv">Home of the verse</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Sector packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapverse">snapverse</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snaplite">snaplite</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapdata">snapdata</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Functions packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapfuns">snapfuns</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapprep">snapprep</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/alfresco">alfresco</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Data packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapclim">snapclim</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapfire">snapfire</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snappoly">snappoly</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapmaps">snapmaps</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapdist">snapdist</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Apps packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapapps">snapapps</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Satellite packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/rvtable">rvtable</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/apputils">apputils</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/maputils">maputils</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snaputils">snaputils</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapmeta">snapmeta</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapsite">snapsite</a>
+    </li>
+  </ul>
+</li>
+<li>
   <a href="https://github.com/leonawicz/snapmeta">
     <span class="fa fa-github fa-lg"></span>
      
@@ -123,19 +201,15 @@ See <code>use_these</code> for details on defaults.</p>
     <pre class="examples"><div class='input'><span class='fu'>reminders</span>()</div><div class='output co'>#&gt; 1. Create a new R package via RStudio &gt; New Project &gt; R Package
 #&gt;   with 'Create a git repository' checked.
 #&gt; 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.
-#&gt; 
 #&gt; 3. Add the repo on GitHub:
 #&gt;   Use default settings (Do not create README.md).
-#&gt;   Set docs/ directory for hosting project website
-#&gt; 
-#&gt; 4. Then in git shell, enter:
+#&gt;   Set docs/ directory for hosting project website (Must first push docs/ to GitHub).
+#&gt; 4. In git shell, enter:
 #&gt;   git remote add origin git@github.com:leonawicz/reference.git
 #&gt;   git push -u origin master
-#&gt; 
 #&gt; 5. Then return to R console and run:
 #&gt;   snapmeta::use_these()
 #&gt;     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.
-#&gt; 
 #&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.
 #&gt;   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.
 #&gt; 7. Check the following:
@@ -143,7 +217,7 @@ See <code>use_these</code> for details on defaults.</p>
 #&gt;   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
 #&gt;   Delete NAMESPACE so it can be auto-generated via devtools.
 #&gt;   Delete any Hello World files.
-#&gt;   At least one inital unit test is required to pass build.
+#&gt;   At least one inital unit test is required to pass build. Lintr test will suffice.
 #&gt;   Commit changes, but hold off on cran-comments.md and revdep until meaningful.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -35,19 +35,15 @@ reminders()
 #> 1. Create a new R package via RStudio > New Project > R Package
 #>   with 'Create a git repository' checked.
 #> 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.
-#> 
 #> 3. Add the repo on GitHub:
 #>   Use default settings (Do not create README.md).
-#>   Set docs/ directory for hosting project website
-#> 
-#> 4. Then in git shell, enter:
+#>   Set docs/ directory for hosting project website (Must first push docs/ to GitHub).
+#> 4. In git shell, enter:
 #>   git remote add origin git@github.com:leonawicz/snapmeta.git
 #>   git push -u origin master
-#> 
 #> 5. Then return to R console and run:
 #>   snapmeta::use_these()
 #>     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.
-#> 
 #> 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.
 #>   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.
 #> 7. Check the following:
@@ -55,7 +51,7 @@ reminders()
 #>   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.
 #>   Delete NAMESPACE so it can be auto-generated via devtools.
 #>   Delete any Hello World files.
-#>   At least one inital unit test is required to pass build.
+#>   At least one inital unit test is required to pass build. Lintr test will suffice.
 #>   Commit changes, but hold off on cran-comments.md and revdep until meaningful.
 ```
 

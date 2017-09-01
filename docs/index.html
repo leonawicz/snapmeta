@@ -46,6 +46,89 @@
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-globe fa-lg"></span>
+     
+    SNAPverse
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="http://leonawicz.github.io/sv">Home of the verse</a>
+    </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Sector packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapverse">snapverse</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snaplite">snaplite</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapdata">snapdata</a>
+    </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Functions packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapfuns">snapfuns</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapprep">snapprep</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/alfresco">alfresco</a>
+    </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Data packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapclim">snapclim</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapfire">snapfire</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snappoly">snappoly</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapmaps">snapmaps</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapdist">snapdist</a>
+    </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Apps packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/snapapps">snapapps</a>
+    </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Satellite packages</li>
+    <li>
+      <a href="http://leonawicz.github.io/rvtable">rvtable</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/apputils">apputils</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/maputils">maputils</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snaputils">snaputils</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapmeta">snapmeta</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapsite">snapsite</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="https://github.com/leonawicz/snapmeta">
     <span class="fa fa-github fa-lg"></span>
@@ -95,19 +178,15 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt; 1. Create a new R package via RStudio &gt; New Project &gt; R Package</span>
 <span class="co">#&gt;   with 'Create a git repository' checked.</span>
 <span class="co">#&gt; 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.</span>
-<span class="co">#&gt; </span>
 <span class="co">#&gt; 3. Add the repo on GitHub:</span>
 <span class="co">#&gt;   Use default settings (Do not create README.md).</span>
-<span class="co">#&gt;   Set docs/ directory for hosting project website</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; 4. Then in git shell, enter:</span>
+<span class="co">#&gt;   Set docs/ directory for hosting project website (Must first push docs/ to GitHub).</span>
+<span class="co">#&gt; 4. In git shell, enter:</span>
 <span class="co">#&gt;   git remote add origin git@github.com:leonawicz/snapmeta.git</span>
 <span class="co">#&gt;   git push -u origin master</span>
-<span class="co">#&gt; </span>
 <span class="co">#&gt; 5. Then return to R console and run:</span>
 <span class="co">#&gt;   snapmeta::use_these()</span>
 <span class="co">#&gt;     </span><span class="al">NOTE</span><span class="co">: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
-<span class="co">#&gt; </span>
 <span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.</span>
 <span class="co">#&gt;   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.</span>
 <span class="co">#&gt; 7. Check the following:</span>
@@ -115,7 +194,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt;   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.</span>
 <span class="co">#&gt;   Delete NAMESPACE so it can be auto-generated via devtools.</span>
 <span class="co">#&gt;   Delete any Hello World files.</span>
-<span class="co">#&gt;   At least one inital unit test is required to pass build.</span>
+<span class="co">#&gt;   At least one inital unit test is required to pass build. Lintr test will suffice.</span>
 <span class="co">#&gt;   Commit changes, but hold off on cran-comments.md and revdep until meaningful.</span></code></pre></div>
 <p>This should all be familiar if you develop R packages, but it can be easy to occasionally neglect a step. The recommendations are not completely universal, however, and cater specifically to SNAPverse package development.</p>
 <p>If it meets all needs, run:</p>
