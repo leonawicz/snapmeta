@@ -199,7 +199,7 @@ use_clone_notes <- function(){
 #'
 #' @examples
 #' \dontrun{use_these()}
-use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(), snapverse=TRUE){
+use_these <- function(pkg = basename(getwd()), authors = pkg_authors(), cph=pkg_cph(), snapverse = TRUE){
   snapmeta::use_authors(authors, cph)
   usethis::use_github_links()
   snapmeta::use_clone_notes()
@@ -212,7 +212,7 @@ use_these <- function(pkg=basename(getwd()), authors=pkg_authors(), cph=pkg_cph(
   usethis::use_revdep()
   snapmeta::use_lintr()
   pkgdown::init_site()
-  pdfiles <- list.files(file.path(system.file(package="snapmeta"), "resources/pkgdown"),
+  pdfiles <- list.files(file.path(system.file(package = "snapmeta"), "resources/pkgdown"),
                         full.names = TRUE)
   dir.create("pkgdown", showWarnings = FALSE)
   file.copy(pdfiles[2], file.path("pkgdown", basename(pdfiles[2])), overwrite = TRUE)
