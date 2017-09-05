@@ -225,6 +225,8 @@ use_these <- function(pkg = basename(getwd()), authors = pkg_authors(), cph=pkg_
   sink(file)
   cat(paste0(x, "\n"))
   sink()
+  snap_symbol <- file.path(system.file(package = "snapmeta"), "resources/snap_symbol.svg")
+  file.copy(snap_symbol, file.path("docs", basename(snap_symbol)), overwrite = TRUE)
 
   usethis::use_appveyor()
   usethis::use_travis()
