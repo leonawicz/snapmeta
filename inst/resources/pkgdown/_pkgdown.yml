@@ -18,7 +18,7 @@ navbar:
       icon: fa-globe fa-lg
       menu:
         - text: "Home of the verse"
-          href: http://leonawicz.github.io/sv
+          href: http://leonawicz.github.io/snapverse/sv
         - text: "--------"
         - text: "Sector packages"
         - text: "snapverse"
