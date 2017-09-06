@@ -15,7 +15,7 @@
 #' @examples
 #' sv_local_pkgs()
 sv_local_pkgs <- function(base_path="../", self = TRUE){
-  x <- list.files(base_path, pattern="^snap*")
+  x <- list.files(base_path, pattern = "^snap*|^alfresco$|^rvtable$|^apputils$|^maputils$")
   if(!self) x <- x[x != basename(getwd())]
   x
 }
