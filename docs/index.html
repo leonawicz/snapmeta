@@ -56,7 +56,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="http://leonawicz.github.io/sv">Home of the verse</a>
+      <a href="http://leonawicz.github.io/sv.html">Home of the verse</a>
     </li>
     <li class="divider">
     </li>
@@ -69,6 +69,9 @@
     </li>
     <li>
       <a href="http://leonawicz.github.io/snapdata">snapdata</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapwebs">snapwebs</a>
     </li>
     <li class="divider">
     </li>
@@ -102,9 +105,18 @@
     </li>
     <li class="divider">
     </li>
-<li class="dropdown-header">Apps packages</li>
+<li class="dropdown-header">Apps &amp; docs packages</li>
     <li>
       <a href="http://leonawicz.github.io/snapapps">snapapps</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapdash">snapdash</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapflex">snapflex</a>
+    </li>
+    <li>
+      <a href="http://leonawicz.github.io/snapdocs">snapdocs</a>
     </li>
     <li class="divider">
     </li>
@@ -163,8 +175,8 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install snapmeta from github with:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools')</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"leonawicz/snapmeta"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+devtools::<span class="kw">install_github</span>(<span class="st">"leonawicz/snapmeta"</span>)</code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -186,7 +198,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt;   git push -u origin master</span>
 <span class="co">#&gt; 5. Then return to R console and run:</span>
 <span class="co">#&gt;   snapmeta::use_these()</span>
-<span class="co">#&gt;     </span><span class="al">NOTE</span><span class="co">: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
+<span class="co">#&gt;     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
 <span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.</span>
 <span class="co">#&gt;   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.</span>
 <span class="co">#&gt; 7. Check the following:</span>
@@ -206,30 +218,24 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#getting-info-from-the-verse" class="anchor"></a>Getting info from the verse</h3>
 <p>A table of all SNAPverse packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_pkgs.html">sv_pkgs</a></span>()
-<span class="co">#&gt; # A tibble: 18 x 3</span>
+<span class="co">#&gt; # A tibble: 22 x 3</span>
 <span class="co">#&gt;          pkg      type local</span>
 <span class="co">#&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt;</span>
 <span class="co">#&gt;  1 snapverse    sector  TRUE</span>
 <span class="co">#&gt;  2  snaplite    sector FALSE</span>
 <span class="co">#&gt;  3  snapdata    sector FALSE</span>
-<span class="co">#&gt;  4  snapfuns functions FALSE</span>
-<span class="co">#&gt;  5  snapprep functions FALSE</span>
-<span class="co">#&gt;  6  alfresco functions FALSE</span>
-<span class="co">#&gt;  7  snapclim      data FALSE</span>
-<span class="co">#&gt;  8  snapfire      data FALSE</span>
-<span class="co">#&gt;  9  snappoly      data  TRUE</span>
-<span class="co">#&gt; 10  snapmaps      data FALSE</span>
-<span class="co">#&gt; 11  snapdist      data FALSE</span>
-<span class="co">#&gt; 12  snapapps      apps FALSE</span>
-<span class="co">#&gt; 13   rvtable satellite FALSE</span>
-<span class="co">#&gt; 14  apputils satellite FALSE</span>
-<span class="co">#&gt; 15  maputils satellite FALSE</span>
-<span class="co">#&gt; 16 snaputils satellite  TRUE</span>
-<span class="co">#&gt; 17  snapmeta satellite  TRUE</span>
-<span class="co">#&gt; 18  snapsite satellite  TRUE</span></code></pre></div>
+<span class="co">#&gt;  4  snapwebs    sector FALSE</span>
+<span class="co">#&gt;  5  snapfuns functions FALSE</span>
+<span class="co">#&gt;  6  snapprep functions FALSE</span>
+<span class="co">#&gt;  7  alfresco functions  TRUE</span>
+<span class="co">#&gt;  8  snapclim      data FALSE</span>
+<span class="co">#&gt;  9  snapfire      data FALSE</span>
+<span class="co">#&gt; 10  snappoly      data  TRUE</span>
+<span class="co">#&gt; # ... with 12 more rows</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
-<span class="co">#&gt; [1] "snapmeta"  "snappoly"  "snapsite"  "snaputils" "snapverse"</span></code></pre></div>
+<span class="co">#&gt; [1] "alfresco"  "apputils"  "rvtable"   "snapmeta"  "snappoly"  "snapsite" </span>
+<span class="co">#&gt; [7] "snaputils" "snapverse"</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -247,8 +253,10 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE.html">LICENSE</a></p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Matthew Leonawicz <br><small class="roles"> Author, maintainer </small> </li>
-<li>Scenarios Network for Alaska and Arctic Planning <br><small class="roles"> Copyright holder, funder </small> </li>
+<li>
+<a href="http://leonawicz.github.io/">Matthew Leonawicz</a> <br><small class="roles"> Author, maintainer </small> </li>
+<li>
+<a href="http://snap.uaf.edu/"><img src="snap_symbol.svg" height="24">  Scenarios Network for Alaska and Arctic Planning</a> <br><small class="roles"> Copyright holder, funder </small> </li>
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
@@ -262,7 +270,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 
 
       <footer><div class="copyright">
-  <p>Developed by Matthew Leonawicz, Scenarios Network for Alaska and Arctic Planning.</p>
+  <p>Developed by <a href="http://leonawicz.github.io/">Matthew Leonawicz</a>, <a href="http://snap.uaf.edu/"><img src="snap_symbol.svg" height="24">  Scenarios Network for Alaska and Arctic Planning</a>.</p>
 </div>
 
 <div class="pkgdown">

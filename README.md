@@ -18,7 +18,7 @@ Installation
 You can install snapmeta from github with:
 
 ``` r
-# install.packages('devtools')
+# install.packages("devtools")
 devtools::install_github("leonawicz/snapmeta")
 ```
 
@@ -71,32 +71,26 @@ A table of all SNAPverse packages can be obtained by:
 
 ``` r
 sv_pkgs()
-#> # A tibble: 18 x 3
+#> # A tibble: 22 x 3
 #>          pkg      type local
 #>        <chr>     <chr> <lgl>
 #>  1 snapverse    sector  TRUE
 #>  2  snaplite    sector FALSE
 #>  3  snapdata    sector FALSE
-#>  4  snapfuns functions FALSE
-#>  5  snapprep functions FALSE
-#>  6  alfresco functions FALSE
-#>  7  snapclim      data FALSE
-#>  8  snapfire      data FALSE
-#>  9  snappoly      data  TRUE
-#> 10  snapmaps      data FALSE
-#> 11  snapdist      data FALSE
-#> 12  snapapps      apps FALSE
-#> 13   rvtable satellite FALSE
-#> 14  apputils satellite FALSE
-#> 15  maputils satellite FALSE
-#> 16 snaputils satellite  TRUE
-#> 17  snapmeta satellite  TRUE
-#> 18  snapsite satellite  TRUE
+#>  4  snapwebs    sector FALSE
+#>  5  snapfuns functions FALSE
+#>  6  snapprep functions FALSE
+#>  7  alfresco functions  TRUE
+#>  8  snapclim      data FALSE
+#>  9  snapfire      data FALSE
+#> 10  snappoly      data  TRUE
+#> # ... with 12 more rows
 ```
 
 The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:
 
 ``` r
 sv_local_pkgs()
-#> [1] "snapmeta"  "snappoly"  "snapsite"  "snaputils" "snapverse"
+#> [1] "alfresco"  "apputils"  "rvtable"   "snapmeta"  "snappoly"  "snapsite" 
+#> [7] "snaputils" "snapverse"
 ```
