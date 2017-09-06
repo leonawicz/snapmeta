@@ -43,15 +43,15 @@ sv_local_pkgs <- function(base_path="../", self = TRUE){
 sv_pkgs <- function(){
   typenames <- c("sector", "functions", "data", "apps", "satellite")
   type <- list(
-    sector=c("snapverse", "snaplite", "snapdata"),
-    functions=c("snapfuns", "snapprep", "alfresco"),
-    data=c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
-    apps="snapapps",
-    satellite=c("rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
+    sector = c("snapverse", "snaplite", "snapdata", "snapwebs"),
+    functions = c("snapfuns", "snapprep", "alfresco"),
+    data = c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
+    apps = c("snapapps", "snapdash", "snapflex", "snapdocs"),
+    satellite = c("rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
 
   )
   d <- tibble::data_frame(
-    pkg=unlist(type), type=rep(typenames, times=sapply(type, length)), local=FALSE
+    pkg = unlist(type), type = rep(typenames, times=sapply(type, length)), local = FALSE
   )
   x <- sv_local_pkgs()
   if(length(x)) d$local[d$pkg %in% x] <- TRUE
