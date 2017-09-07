@@ -3,6 +3,7 @@ url: http://_ACCOUNT_.github.io/
 template:
   params:
     bootswatch: sandstone
+    ganalytics: UA-46129458-3
 
 authors:
   Matthew Leonawicz:

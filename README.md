@@ -8,7 +8,7 @@ snapmeta
 `snapmeta` contains a collection of utility functions for the development of other SNAPverse packages. `snapmeta` is a satellite package of the SNAPverse collection of R packages.
 
 <p style="text-align:center;">
-<img src="man/figures/sv_satellites_dev.png">
+<img src="man/figures/sv_satellites_dev.png" width=350>
 </p>
 <br>
 
@@ -18,7 +18,7 @@ Installation
 You can install snapmeta from github with:
 
 ``` r
-# install.packages("devtools")
+# install.packages('devtools')
 devtools::install_github("leonawicz/snapmeta")
 ```
 

@@ -3,6 +3,7 @@ url: http://leonawicz.github.io/
 template:
   params:
     bootswatch: sandstone
+    ganalytics: UA-46129458-3
 
 authors:
   Matthew Leonawicz:
