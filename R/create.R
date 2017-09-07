@@ -161,7 +161,10 @@ use_lintr <- function(base_path = ".", use_testthat = TRUE){
 #' \dontrun{use_clone_notes}
 use_clone_notes <- function(){
   sink("clone_notes.md")
-  cat(paste0("# Clone this repository\n\n", "No notes for this respository.\n"))
+  cat(paste0(
+    "# Clone this repository\n\n",
+    "Cloning this repository may require you to remove the top-level .lintr file and regenerate a symbolic link to the actual inst/.lintr file.\n\n",
+    "There are no other notes for this respository.\n"))
   sink()
 }
 
@@ -222,6 +225,7 @@ use_these <- function(pkg = basename(getwd()), authors = pkg_authors(), cph=pkg_
   x <- paste(readLines(pdfiles[1]), collapse = "\n")
   x <- gsub("_ACCOUNT_", r$account, x)
   x <- gsub("_PACKAGE_", r$repo, x)
+  if(r$account == "leonawicz") gsub("_ENTER_CODE_HERE_", "46129458-3", x)
   sink(file)
   cat(paste0(x, "\n"))
   sink()
