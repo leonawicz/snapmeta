@@ -62,18 +62,18 @@ pkg_metadata <- list(
   labels = sv_pkgs()$pkg,
   titles = c(
     "Functions, data, apps", "Load functions packages", "Load data packages", "All apps and docs",
-    "Working with SNAP data", "Source data munging", "Working with ALFRESCO",
+    "Work with SNAP data", "Mung source data", "Work with ALFRESCO",
     "SNAP climate data", "SNAP fire data", "SNAP vector maps", "SNAP raster maps", "Spatial distributions",
     "SNAP Shiny apps", "SNAP Shiny apps", "SNAP dashboards", "SNAP docs",
-    "Random variable tables", "App support", "Shiny and Leaflet", "SNAP app support",
+    "Random variables", "Shiny app support", "Shiny and Leaflet", "SNAP app support",
     "SNAPverse integration", "SNAPverse integration"
     ),
   subtitles = c(
-    "traverse the verse...", "A lightweight collection", "All data in one call", "Wrapped in packages",
-    "For users", "For developers", "For developers",
+    "Traverse the verse...", "A lightweight collection", "All data in one call", "Wrapped in neat packages",
+    "Functions for users", "Functions for developers", "Functions for developers",
     "Modeled and observational", "Modeled and observational", "Common spatial polygons", "Common raster layers", "Example data sets",
-    "Various examples", "Shiny dashboards", "Flex examples", "Interactive documents",
-    "For distributions", "Common utilities", "Mapsets utilities", "SNAP utilities",
+    "Various examples", "Shiny dashboards", "Flex dashboard examples", "Interactive documents",
+    "Distributions tables", "Common utilities", "Mapsets utilities", "SNAP-specific utilities",
     "For developers", "For developers"
     )
 )
