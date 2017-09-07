@@ -93,7 +93,7 @@ pkg_metadata <- list(
 #' @export
 #'
 #' @examples
-#' snapps_titles("label")
+#' pkg_titles("label")
 pkg_titles <- function(type){
   switch(type,
          "label" = pkg_metadata$labels,

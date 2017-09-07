@@ -20,5 +20,5 @@ Labels are generally shown above an app showcase widget. Titles are generally th
 Subtitles are for smaller text below.
 }
 \examples{
-snapps_titles("label")
+pkg_titles("label")
 }
