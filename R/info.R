@@ -57,3 +57,44 @@ sv_pkgs <- function(){
   if(length(x)) d$local[d$pkg %in% x] <- TRUE
   d
 }
+
+pkg_metadata <- list(
+  labels = sv_pkgs()$pkg,
+  titles = c(
+    "Functions, data, apps", "Load functions packages", "Load data packages", "All apps and docs",
+    "Working with SNAP data", "Source data munging", "Working with ALFRESCO",
+    "SNAP climate data", "SNAP fire data", "SNAP vector maps", "SNAP raster maps", "Spatial distributions",
+    "SNAP Shiny apps", "SNAP Shiny apps", "SNAP dashboards", "SNAP docs",
+    "Random variable tables", "App support", "Shiny and Leaflet", "SNAP app support",
+    "SNAPverse integration", "SNAPverse integration"
+    ),
+  subtitles = c(
+    "traverse the verse...", "A lightweight collection", "All data in one call", "Wrapped in packages",
+    "For users", "For developers", "For developers",
+    "Modeled and observational", "Modeled and observational", "Common spatial polygons", "Common raster layers", "Example data sets",
+    "Various examples", "Shiny dashboards", "Flex examples", "Interactive documents",
+    "For distributions", "Common utilities", "Mapsets utilities", "SNAP utilities",
+    "For developers", "For developers"
+    )
+)
+
+#' Get heading information related to SNAPverse R packages
+#'
+#' This function returns a list of headings related to SNAPvere R packages for \code{apputils::app_showcase} display purposes.
+#'
+#' Labels are generally shown above an app showcase widget. Titles are generally the top line heading over the image link inside the widget.
+#' Subtitles are for smaller text below.
+#'
+#' @param type character, \code{"label"}, \code{"title"} or \code{"sub"}.
+#'
+#' @return a vector of headings.
+#' @export
+#'
+#' @examples
+#' snapps_titles("label")
+pkg_titles <- function(type){
+  switch(type,
+         "label" = pkg_metadata$labels,
+         "title" = pkg_metadata$titles,
+         "sub" = pkg_metadata$subtitles)
+}
