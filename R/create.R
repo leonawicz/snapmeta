@@ -225,7 +225,7 @@ use_these <- function(pkg = basename(getwd()), authors = pkg_authors(), cph=pkg_
   x <- paste(readLines(pdfiles[1]), collapse = "\n")
   x <- gsub("_ACCOUNT_", r$account, x)
   x <- gsub("_PACKAGE_", r$repo, x)
-  if(r$account == "leonawicz") gsub("_ENTER_CODE_HERE_", "46129458-3", x)
+  if(r$account == "leonawicz") x <- gsub("_ENTER_CODE_HERE_", "46129458-3", x)
   sink(file)
   cat(paste0(x, "\n"))
   sink()
