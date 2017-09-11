@@ -45,7 +45,7 @@ sv_pkgs <- function(){
   type <- list(
     sector = c("snapverse", "snaplite", "snapdata", "snapwebs"),
     functions = c("snapfuns", "snapprep", "alfresco"),
-    data = c("snapclim", "snapfire", "snappoly", "snapmaps", "snapdist"),
+    data = c("snapclim", "snapfire", "snappoly", "snapgrid", "snapdist"),
     apps = c("snapapps", "snapdash", "snapflex", "snapdocs"),
     satellite = c("rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
 
