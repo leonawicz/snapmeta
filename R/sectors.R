@@ -104,10 +104,9 @@ style_grey <- function(level, ...) {
   )
 }
 
-#' Update SNAPverse sector member packages
+#' Update SNAPverse sector packages
 #'
-#' Check if all packages under a SNAPverse sector package (and optionally, their
-#' dependencies) are up-to-date. Install them after interactive confirmation.
+#' Update a SNAPverse sector package and its member packages.
 #'
 #' @param pkg character, the sector package covering all member packages.
 #' @param force If \code{TRUE}, force member install even if unchanged.

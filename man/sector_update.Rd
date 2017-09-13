@@ -2,7 +2,7 @@
 % Please edit documentation in R/sectors.R
 \name{sector_update}
 \alias{sector_update}
-\title{Update SNAPverse sector member packages}
+\title{Update SNAPverse sector packages}
 \usage{
 sector_update(pkg, force = FALSE, quiet = TRUE)
 }
@@ -14,8 +14,7 @@ sector_update(pkg, force = FALSE, quiet = TRUE)
 \item{quiet}{logical.}
 }
 \description{
-Check if all packages under a SNAPverse sector package (and optionally, their
-dependencies) are up-to-date. Install them after interactive confirmation.
+Update a SNAPverse sector package and its member packages.
 }
 \examples{
 \dontrun{
