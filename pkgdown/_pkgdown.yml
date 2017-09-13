@@ -27,9 +27,11 @@ reference:
   - sv_local_pkgs
   - sv_pkgs
   - pkg_titles
+  - sector_members
 - title: Sector packages
   contents:
   - verse_attach
+  - sector_update
 
 navbar:
   type: inverse

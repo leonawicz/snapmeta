@@ -103,3 +103,25 @@ style_grey <- function(level, ...) {
     crayon::make_style(grDevices::grey(level), grey = TRUE)
   )
 }
+
+#' Update SNAPverse sector member packages
+#'
+#' Check if all packages under a SNAPverse sector package (and optionally, their
+#' dependencies) are up-to-date. Install them after interactive confirmation.
+#'
+#' @param pkg character, the sector package covering all member packages.
+#' @param force If \code{TRUE}, force member install even if unchanged.
+#' @param quiet logical.
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' sector_update("snapverse")
+#' }
+sector_update <- function(pkg, force = FALSE, quiet = TRUE) {
+  pkgs <- snapmeta::sv_pkgs() %>% dplyr::filter(.data[["type"]] == "sector")
+  if(!pkg %in% pkgs$pkg) stop(paste(pkg, "is not a SNAPverse sector package."))
+  members <- sector_members(pkg)
+  devtools::install_github(paste0("leonawicz/", c(pkg, members)), quiet = quiet, force = force)
+  invisible()
+}

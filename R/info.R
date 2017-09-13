@@ -100,3 +100,28 @@ pkg_titles <- function(type){
          "title" = pkg_metadata$titles,
          "sub" = pkg_metadata$subtitles)
 }
+
+#' Get members of a sector
+#'
+#' Get a list of the collection of member packages that are installed and loaded via a SNAPverse sector package.
+#'
+#' The available sector packages are \code{"snapverse"}, \code{"snaplite"}, \code{"snapdata"} and \code{"snapwebs"}.
+#'
+#' @param pkg character, a sector package. See details.
+#'
+#' @return a character vector.
+#' @export
+#'
+#' @examples
+#' sector_members("snapverse")
+sector_members <- function(pkg){
+  pkgs <- snapmeta::sv_pkgs()
+  if(!pkg %in% dplyr::filter(pkgs, .data[["type"]] == "sector")$pkg)
+    stop(paste(pkg, "is not a SNAPverse sector package."))
+  switch(
+    pkg,
+    "snapverse" = pkgs$pkg[pkgs$type %in% c("functions", "data", "apps")],
+    "snaplite" = pkgs$pkg[pkgs$type == "functions"],
+    "snapdata" = pkgs$pkg[pkgs$type == "data"],
+    "snapwebs" = pkgs$pkg[pkgs$type == "apps"])
+}
