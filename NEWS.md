@@ -1,4 +1,4 @@
-# snapmeta 0.0.1
+# snapmeta 0.1.0
 
 * Added new functions and documentation.
 

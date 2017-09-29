@@ -1,5 +1,5 @@
 Package: snapmeta
-Version: 0.0.1
+Version: 0.1.0
 Title: Utilities For SNAPverse Development
 Description: This package contains a collection of utility functions for the development of other SNAPverse packages.
 Authors@R: c(person("Matthew", "Leonawicz", email = "mfleonawicz@alaska.edu", role = c("aut", "cre")),
