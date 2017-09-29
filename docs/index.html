@@ -230,7 +230,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"leonawicz/sna
 <a href="#getting-info-from-the-verse" class="anchor"></a>Getting info from the verse</h3>
 <p>A table of all SNAPverse packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_pkgs.html">sv_pkgs</a></span>()
-<span class="co">#&gt; # A tibble: 22 x 3</span>
+<span class="co">#&gt; # A tibble: 23 x 3</span>
 <span class="co">#&gt;          pkg      type local</span>
 <span class="co">#&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt;</span>
 <span class="co">#&gt;  1 snapverse    sector  TRUE</span>
@@ -240,10 +240,10 @@ devtools::<span class="kw">install_github</span>(<span class="st">"leonawicz/sna
 <span class="co">#&gt;  5  snapfuns functions FALSE</span>
 <span class="co">#&gt;  6  snapprep functions  TRUE</span>
 <span class="co">#&gt;  7  alfresco functions  TRUE</span>
-<span class="co">#&gt;  8  snapclim      data FALSE</span>
-<span class="co">#&gt;  9  snapfire      data FALSE</span>
-<span class="co">#&gt; 10  snappoly      data  TRUE</span>
-<span class="co">#&gt; # ... with 12 more rows</span></code></pre></div>
+<span class="co">#&gt;  8  snaplocs functions  TRUE</span>
+<span class="co">#&gt;  9  snapclim      data FALSE</span>
+<span class="co">#&gt; 10  snapfire      data FALSE</span>
+<span class="co">#&gt; # ... with 13 more rows</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
 <span class="co">#&gt;  [1] "alfresco"  "apputils"  "rvtable"   "snapgrid"  "snaplocs" </span>

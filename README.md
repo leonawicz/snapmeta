@@ -71,7 +71,7 @@ A table of all SNAPverse packages can be obtained by:
 
 ``` r
 sv_pkgs()
-#> # A tibble: 22 x 3
+#> # A tibble: 23 x 3
 #>          pkg      type local
 #>        <chr>     <chr> <lgl>
 #>  1 snapverse    sector  TRUE
@@ -81,10 +81,10 @@ sv_pkgs()
 #>  5  snapfuns functions FALSE
 #>  6  snapprep functions  TRUE
 #>  7  alfresco functions  TRUE
-#>  8  snapclim      data FALSE
-#>  9  snapfire      data FALSE
-#> 10  snappoly      data  TRUE
-#> # ... with 12 more rows
+#>  8  snaplocs functions  TRUE
+#>  9  snapclim      data FALSE
+#> 10  snapfire      data FALSE
+#> # ... with 13 more rows
 ```
 
 The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:
