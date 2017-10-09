@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • snapmeta</title>
+<title>Use apps from shiny-apps repo in snapapps package � use_apps • snapmeta</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
   </head>
 
   <body>
-    <div class="container template-vignette-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -188,20 +188,62 @@
       
       </header>
 
-      <div class="page-header">
-  <h1>Articles <small>version&nbsp;0.1.1</small></h1>
-</div>
-
-<div class="row">
-  <div class="col-md-9">
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="snapmeta.html">Introduction to snapmeta</a></li>
-      </ul>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>Use apps from shiny-apps repo in snapapps package</h1>
     </div>
+
+    
+    <p>Include Shiny apps from a local clone of the SNAP shiny-apps repository in the local clone of the snapapps package.</p>
+    
+
+    <pre class="usage"><span class='fu'>use_apps</span>(<span class='no'>id</span>, <span class='kw'>base_path</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>id</th>
+      <td><p>character, app directory name.</p></td>
+    </tr>
+    <tr>
+      <th>base_path</th>
+      <td><p>base file path.</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>logical, overwrite previously added apps.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function will check to see if local Git repositories exist for both the <code>snapapps</code> pacakge and the SNAP <code>shiny-apps</code> repository.
+If <code>id</code> is a valid app directory in the latter, it will be copied to the former. <code>id</code> may be a vector.
+This function should be used once per included app. It should only be reused (to update an app) if changes have not been made
+to the copy previously placed in <code>snapapps</code> or you will lose those changes.</p>
+<p>At this time, the canonical source is the <code>shiny-apps</code> repository, though this may swap to <code>snapapps</code> in the future
+when critical mass favors the package, as well as more apps being includes from sources other than <code>shiny-apps</code>.</p>
+<p>This function should be called for copying apps into the <code>snapapps</code> top level directory. It will place apps in <code>inst/shiny-examples</code>.
+Another base path should only be used if apps are to be copied to some other location that <code>snapapps</code> for some reason.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>use_apps</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"rvdist"</span>)
+<span class='co'># }</span></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
   </div>
 </div>
 
