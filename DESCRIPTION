@@ -22,7 +22,8 @@ Imports:
     git2r,
     dplyr,
     magrittr,
-    rlang
+    rlang,
+    purrr
 Suggests: 
     testthat,
     covr,
