@@ -13,7 +13,7 @@ pkg_titles(type)
 a vector of headings.
 }
 \description{
-This function returns a list of headings related to SNAPvere R packages for \code{apputils::app_showcase} display purposes.
+This function returns a list of headings related to SNAPverse R packages for \code{apputils::app_showcase} display purposes.
 }
 \details{
 Labels are generally shown above an app showcase widget. Titles are generally the top line heading over the image link inside the widget.
