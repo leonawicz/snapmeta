@@ -32,6 +32,9 @@ reference:
   contents:
   - verse_attach
   - sector_update
+- title: snapapps support
+  contents:
+  - use_apps
 
 navbar:
   type: inverse
