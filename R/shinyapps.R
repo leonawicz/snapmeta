@@ -31,7 +31,6 @@ use_apps <- function(id, base_path = ".", overwrite = FALSE){
     message("inst/shiny-examples does not exist. Creating it now.")
     dir.create("inst/shiny-examples", recursive = TRUE, showWarnings = FALSE)
   }
-  x <- list.files(path)
   purrr::walk(id, ~(if(.x %in% list.files(path) & overwrite)
     unlink(file.path(path, .x), recursive = TRUE, force = TRUE)))
   purrr::walk(id, ~(if(!.x %in% list.files(path) || overwrite)
