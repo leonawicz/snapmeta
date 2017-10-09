@@ -32,7 +32,7 @@ sv_local_pkgs <- function(base_path="../", self = TRUE){
 #' The other packages are considered core packages of the SNAPverse and fall into of three sectors of the verse:
 #' functions, data or apps. The three packages listed as \code{sector} packages load different subsets of SNAPverse packages
 #' for convenience. \code{snapverse} loads functions, data and apps packages. \code{snaplite} loads only the functions packages.
-#' \code{snapdata} loads only the data packages. For most users, the packages most likely needed or of interst
+#' \code{snapdata} loads only the data packages. For most users, the packages most likely needed or of interest
 #' are \code{snapfuns}, \code{snapapps} and any of the data packages.
 #'
 #' @return a data frame.
@@ -82,7 +82,7 @@ pkg_metadata <- list(
 
 #' Get heading information related to SNAPverse R packages
 #'
-#' This function returns a list of headings related to SNAPvere R packages for \code{apputils::app_showcase} display purposes.
+#' This function returns a list of headings related to SNAPverse R packages for \code{apputils::app_showcase} display purposes.
 #'
 #' Labels are generally shown above an app showcase widget. Titles are generally the top line heading over the image link inside the widget.
 #' Subtitles are for smaller text below.
