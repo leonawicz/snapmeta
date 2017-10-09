@@ -1,10 +1,8 @@
+# snapmeta 0.1.1
+
+* Added `use_apps` to support the `snapapps` package.
+* Updated documentation.
+
 # snapmeta 0.1.0
 
 * Added new functions and documentation.
-
-# snapmeta 0.0.0.9000
-
-* Added a `NEWS.md` file to track changes to the package.
-
-
-
