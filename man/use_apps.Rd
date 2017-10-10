@@ -25,7 +25,7 @@ to the copy previously placed in \code{snapapps} or you will lose those changes.
 At this time, the canonical source is the \code{shiny-apps} repository, though this may swap to \code{snapapps} in the future
 when critical mass favors the package, as well as more apps being includes from sources other than \code{shiny-apps}.
 
-This function should be called for copying apps into the \code{snapapps} top level directory. It will place apps in \code{inst/shiny-examples}.
+This function should be called for copying apps into the \code{snapapps} top level directory. It will place apps in \code{inst/shiny}.
 Another base path should only be used if apps are to be copied to some other location that \code{snapapps} for some reason.
 }
 \examples{
