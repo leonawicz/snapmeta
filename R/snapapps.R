@@ -37,10 +37,12 @@ use_apps <- function(id, base_path = ".", overwrite = FALSE){
     unlink(file.path(path, .x), recursive = TRUE, force = TRUE)))
   purrr::walk(id, ~(if(!.x %in% cur_files || overwrite)
     dir.create(file.path(path, .x), recursive = TRUE, showWarnings = FALSE)))
-  purrr::walk(id, ~(if(!.x %in% cur_files || overwrite)
-    file.copy(file.path("../shiny-apps", id), path, recursive = TRUE)))
   purrr::walk(id, ~(if(!.x %in% cur_files || overwrite){
-    print(file.path(path, .x))
+    cat(paste("Copying app to:", file.path(path, .x)))
+    file.copy(file.path("../shiny-apps", id), path, recursive = TRUE)
+    })
+  )
+  purrr::walk(id, ~(if(!.x %in% cur_files || overwrite){
     if("rsconnect" %in% list.files(file.path(path, .x)))
       unlink(file.path(path, .x, "rsconnect"), recursive = TRUE, force = TRUE)
     })
