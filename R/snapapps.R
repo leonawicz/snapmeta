@@ -38,7 +38,7 @@ use_apps <- function(id, base_path = ".", overwrite = FALSE){
   purrr::walk(id, ~(if(!.x %in% cur_files || overwrite)
     dir.create(file.path(path, .x), recursive = TRUE, showWarnings = FALSE)))
   purrr::walk(id, ~(if(!.x %in% cur_files || overwrite){
-    cat(paste("Copying app to:", file.path(path, .x)))
+    cat(paste("Copying app to:", file.path(path, .x), "\n"))
     file.copy(file.path("../shiny-apps", id), path, recursive = TRUE)
     })
   )
