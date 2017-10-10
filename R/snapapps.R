@@ -31,11 +31,19 @@ use_apps <- function(id, base_path = ".", overwrite = FALSE){
     message("inst/shiny-examples does not exist. Creating it now.")
     dir.create("inst/shiny-examples", recursive = TRUE, showWarnings = FALSE)
   }
-  purrr::walk(id, ~(if(.x %in% list.files(path) & overwrite)
+  cur_files <- list.files(path)
+  if(!length(cur_files)) cur_files <- NULL
+  purrr::walk(id, ~(if(.x %in% cur_files & overwrite)
     unlink(file.path(path, .x), recursive = TRUE, force = TRUE)))
-  purrr::walk(id, ~(if(!.x %in% list.files(path) || overwrite)
+  purrr::walk(id, ~(if(!.x %in% cur_files || overwrite)
     dir.create(file.path(path, .x), recursive = TRUE, showWarnings = FALSE)))
-  purrr::walk(id, ~(if(!.x %in% list.files(path) || overwrite)
+  purrr::walk(id, ~(if(!.x %in% cur_files || overwrite)
     file.copy(file.path("../shiny-apps", id), path, recursive = TRUE)))
+  purrr::walk(id, ~(if(!.x %in% cur_files || overwrite){
+    print(file.path(path, .x))
+    if("rsconnect" %in% list.files(file.path(path, .x)))
+      unlink(file.path(path, .x, "rsconnect"), recursive = TRUE, force = TRUE)
+    })
+  )
   invisible()
 }
