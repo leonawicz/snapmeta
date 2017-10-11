@@ -22,12 +22,10 @@ You can install snapmeta from github with:
 devtools::install_github("leonawicz/snapmeta")
 ```
 
-Usage
------
+Package setup
+-------------
 
-### Package setup
-
-First, take a look at the helpful reminders in the console output from `new_pkg_reminder`. It will be somewhat specific to your account and project if you pass arguments. For example, using my defaults:
+First, take a look at the helpful reminders in the console output from `reminders`. It will be somewhat specific to your account and project if you pass arguments. For example, using my defaults:
 
 ``` r
 library(snapmeta)
@@ -65,7 +63,8 @@ use_these()
 
 If something different is needed, ignore the above wrapper function. Instead, make individual calls to whichever package setup functions are required.
 
-### Getting info from the verse
+Getting info from the verse
+---------------------------
 
 A table of all SNAPverse packages can be obtained by:
 
