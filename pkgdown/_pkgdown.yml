@@ -35,6 +35,8 @@ reference:
 - title: snapapps support
   contents:
   - use_apps
+  - use_appdesc
+  - use_appreadme
 
 navbar:
   type: inverse
