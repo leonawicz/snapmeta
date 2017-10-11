@@ -78,3 +78,5 @@ This also gives more control over the content output by `use_appdesc`.
 use_appdesc("path/to/my_new_app1", title = "My first app", author = "Me", url = "example.com", tags = c("data analysis", "graphing"))
 use_appreadme()
 ```
+
+These functions are intended for using during `snapapps` development and maintenence but can just as easily be used for including Shiny app examples in any R package.
