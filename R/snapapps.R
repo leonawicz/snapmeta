@@ -102,7 +102,7 @@ use_appdesc <- function(base_path = ".", title, author = "Matthew Leonawicz",
   x <- gsub("__displaymode__", mode, x)
   x <- paste0(paste(x, collapse = "\n"), "\n")
   sink(file.path(base_path, "DESCRIPTION"))
-  x
+  cat(x)
   sink()
   cat("Added DESCRIPTION file template.\n")
   invisible()
