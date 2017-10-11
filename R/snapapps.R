@@ -2,7 +2,14 @@
 #'
 #' Include Shiny apps from a local clone of the SNAP shiny-apps repository in the local clone of the snapapps package.
 #'
-#' This function will check to see if local Git repositories exist for both the \code{snapapps} package and the SNAP \code{shiny-apps} repository.
+#' This function will check (assuming default arguments) to see if local git repositories exist
+#' for both the \code{snapapps} package and the SNAP \code{shiny-apps} repository.
+#' This is assuming it is called with the \code{snapapps} directory as the working directory, that \code{source_path} is unchanged, and that they are
+#' adjacent to each other.
+#' For general use, change \code{base_path} to your source package root directory and
+#' change \code{source_path} to whatever directory contains your existing apps.
+#' By default, \code{use_apps} also assumes the package installed resources location for apps is be \code{"inst/shiny"}.
+#'
 #' If \code{id} is a valid app directory in the latter, it will be copied to the former. \code{id} may be a vector.
 #' This function should be used once per included app. It should only be reused (to update an app) if changes have not been made
 #' to the copy previously placed in \code{snapapps} or you will lose those changes.
@@ -14,7 +21,9 @@
 #' Another base path should only be used if apps are to be copied to some other location that \code{snapapps} for some reason.
 #'
 #' @param id character, app directory name.
-#' @param base_path base file path.
+#' @param base_path base file path, defaults to working directory.
+#' @param source_path character, path to source directory containing apps to be copied. See details.
+#' @param res_path character, path to installed resources where apps will be copied to. See details.
 #' @param description logical, add a \code{DESCRIPTION} file template for showcase mode.
 #' @param readme logical, add a \code{Readme.md} template for showcase mode.
 #' @param overwrite logical, overwrite previously added apps.
@@ -23,17 +32,16 @@
 #'
 #' @examples
 #' \dontrun{use_apps(id = "rvdist")}
-use_apps <- function(id, base_path = ".", description = TRUE, readme = TRUE, overwrite = FALSE){
-  x <- "../shiny-apps"
-  y <- "inst/shiny"
+use_apps <- function(id, base_path = ".", source_path = "../shiny-apps", res_path = "inst/shiny",
+                     description = TRUE, readme = TRUE, overwrite = FALSE){
   if(!file.exists("../shiny-apps"))
     stop("`shiny-apps` directory does not exist adjacent to parent directory.")
-  if(any(!id %in% list.files(x)))
+  if(any(!id %in% list.files(source_path)))
     stop("`id` must refer to an app in the local `shiny-apps` repository.")
-  path <- file.path(base_path, y)
+  path <- file.path(base_path, res_path)
   if(!file.exists(path)){
-    message(paste0("`", y, "` does not exist. Creating it now."))
-    dir.create(y, recursive = TRUE, showWarnings = FALSE)
+    message(paste0("`", res_path, "` does not exist. Creating it now."))
+    dir.create(res_path, recursive = TRUE, showWarnings = FALSE)
   }
   cur_files <- list.files(path)
   if(!length(cur_files)) cur_files <- NULL
@@ -43,7 +51,7 @@ use_apps <- function(id, base_path = ".", description = TRUE, readme = TRUE, ove
     dir.create(file.path(path, .x), recursive = TRUE, showWarnings = FALSE)))
   purrr::walk(id, ~(if(!.x %in% cur_files || overwrite){
     cat(paste("Copying app to:", file.path(path, .x), "\n"))
-    file.copy(file.path(x, id), path, recursive = TRUE)
+    file.copy(file.path(source_path, id), path, recursive = TRUE)
     if(description) use_appdesc(path)
     if(readme) use_appreadme(path)
     })
