@@ -8,7 +8,6 @@ vignette: >
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = "C:/github/snapmeta")
 knitr::opts_chunk$set(
   collapse = TRUE, comment = "#>", fig.path = "man/figures/README-", eval = TRUE,
   message = FALSE, warning = FALSE, error = FALSE, tidy = TRUE
@@ -25,7 +24,7 @@ First, take a look at the helpful reminders in the console output from `reminder
 It will be somewhat specific to your account and project if you pass arguments.
 For example, using my defaults:
 
-```{r reminders}
+```{r reminders, eval=FALSE}
 library(snapmeta)
 reminders()
 ```
