@@ -4,13 +4,18 @@
 \alias{use_apps}
 \title{Use apps from shiny-apps repo in snapapps package}
 \usage{
-use_apps(id, base_path = ".", description = TRUE, readme = TRUE,
+use_apps(id, base_path = ".", source_path = "../shiny-apps",
+  res_path = "inst/shiny", description = TRUE, readme = TRUE,
   overwrite = FALSE)
 }
 \arguments{
 \item{id}{character, app directory name.}
 
-\item{base_path}{base file path.}
+\item{base_path}{base file path, defaults to working directory.}
+
+\item{source_path}{character, path to source directory containing apps to be copied. See details.}
+
+\item{res_path}{character, path to installed resources where apps will be copied to. See details.}
 
 \item{description}{logical, add a \code{DESCRIPTION} file template for showcase mode.}
 
@@ -22,7 +27,14 @@ use_apps(id, base_path = ".", description = TRUE, readme = TRUE,
 Include Shiny apps from a local clone of the SNAP shiny-apps repository in the local clone of the snapapps package.
 }
 \details{
-This function will check to see if local Git repositories exist for both the \code{snapapps} package and the SNAP \code{shiny-apps} repository.
+This function will check (assuming default arguments) to see if local git repositories exist
+for both the \code{snapapps} package and the SNAP \code{shiny-apps} repository.
+This is assuming it is called with the \code{snapapps} directory as the working directory, that \code{source_path} is unchanged, and that they are
+adjacent to each other.
+For general use, change \code{base_path} to your source package root directory and
+change \code{source_path} to whatever directory contains your existing apps.
+By default, \code{use_apps} also assumes the package installed resources location for apps is be \code{"inst/shiny"}.
+
 If \code{id} is a valid app directory in the latter, it will be copied to the former. \code{id} may be a vector.
 This function should be used once per included app. It should only be reused (to update an app) if changes have not been made
 to the copy previously placed in \code{snapapps} or you will lose those changes.
