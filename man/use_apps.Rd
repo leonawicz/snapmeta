@@ -4,12 +4,17 @@
 \alias{use_apps}
 \title{Use apps from shiny-apps repo in snapapps package}
 \usage{
-use_apps(id, base_path = ".", overwrite = FALSE)
+use_apps(id, base_path = ".", description = TRUE, readme = TRUE,
+  overwrite = FALSE)
 }
 \arguments{
 \item{id}{character, app directory name.}
 
 \item{base_path}{base file path.}
+
+\item{description}{logical, add a \code{DESCRIPTION} file template for showcase mode.}
+
+\item{readme}{logical, add a \code{Readme.md} template for showcase mode.}
 
 \item{overwrite}{logical, overwrite previously added apps.}
 }
@@ -17,7 +22,7 @@ use_apps(id, base_path = ".", overwrite = FALSE)
 Include Shiny apps from a local clone of the SNAP shiny-apps repository in the local clone of the snapapps package.
 }
 \details{
-This function will check to see if local Git repositories exist for both the \code{snapapps} pacakge and the SNAP \code{shiny-apps} repository.
+This function will check to see if local Git repositories exist for both the \code{snapapps} package and the SNAP \code{shiny-apps} repository.
 If \code{id} is a valid app directory in the latter, it will be copied to the former. \code{id} may be a vector.
 This function should be used once per included app. It should only be reused (to update an app) if changes have not been made
 to the copy previously placed in \code{snapapps} or you will lose those changes.
