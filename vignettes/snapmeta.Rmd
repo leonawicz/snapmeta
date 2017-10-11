@@ -24,6 +24,10 @@ First, take a look at the helpful reminders in the console output from `reminder
 It will be somewhat specific to your account and project if you pass arguments.
 For example, using my defaults:
 
+```{r load, echo=FALSE}
+library(snapmeta)
+```
+
 ```{r reminders, eval=FALSE}
 library(snapmeta)
 reminders()
