@@ -179,28 +179,7 @@
 <a href="#package-setup" class="anchor"></a>Package setup</h2>
 <p>The biggest convenience of <code>snapmeta</code> is the streamlined, semi-automated SNAPverse package creation setup process. First, take a look at the helpful reminders in the console output from <code>reminders</code>. It will be somewhat specific to your account and project if you pass arguments. For example, using my defaults:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(snapmeta)
-<span class="kw"><a href="../reference/reminders.html">reminders</a></span>()
-<span class="co">#&gt; 1. Create a new R package via RStudio &gt; New Project &gt; R Package</span>
-<span class="co">#&gt;   with 'Create a git repository' checked.</span>
-<span class="co">#&gt; 2. Make initial commit by adding the initial .Rbuildignore, .gitignore and [pkgname].Rproj files.</span>
-<span class="co">#&gt; 3. Add the repo on GitHub:</span>
-<span class="co">#&gt;   Use default settings (Do not create README.md).</span>
-<span class="co">#&gt;   Set docs/ directory for hosting project website (Must first push docs/ to GitHub).</span>
-<span class="co">#&gt; 4. In git shell, enter:</span>
-<span class="co">#&gt;   git remote add origin git@github.com:leonawicz/snapmeta.git</span>
-<span class="co">#&gt;   git push -u origin master</span>
-<span class="co">#&gt; 5. Then return to R console and run:</span>
-<span class="co">#&gt;   snapmeta::use_these()</span>
-<span class="co">#&gt;     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
-<span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.</span>
-<span class="co">#&gt;   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.</span>
-<span class="co">#&gt; 7. Check the following:</span>
-<span class="co">#&gt;   Delete absolute path to `docs` created by pkgdown in .Rbuildignore.</span>
-<span class="co">#&gt;   Make initial updates to DESCRIPTION and other files, e.g., README.Rmd, vignette Rmd file, LICENSE.md.</span>
-<span class="co">#&gt;   Delete NAMESPACE so it can be auto-generated via devtools.</span>
-<span class="co">#&gt;   Delete any Hello World files.</span>
-<span class="co">#&gt;   At least one inital unit test is required to pass build. Lintr test will suffice.</span>
-<span class="co">#&gt;   Commit changes, but hold off on cran-comments.md and revdep until meaningful.</span></code></pre></div>
+<span class="kw"><a href="../reference/reminders.html">reminders</a></span>()</code></pre></div>
 <p>This should all be familiar if you develop R packages, but it can be easy to occasionally neglect a step. The recommendations are not completely universal, however, and cater specifically to SNAPverse package development.</p>
 <p>If it meets all needs, run:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/use_these.html">use_these</a></span>()</code></pre></div>
@@ -214,22 +193,20 @@
 <span class="co">#&gt; # A tibble: 23 x 3</span>
 <span class="co">#&gt;          pkg      type local</span>
 <span class="co">#&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt;</span>
-<span class="co">#&gt;  1 snapverse    sector  TRUE</span>
+<span class="co">#&gt;  1 snapverse    sector FALSE</span>
 <span class="co">#&gt;  2  snaplite    sector FALSE</span>
 <span class="co">#&gt;  3  snapdata    sector FALSE</span>
 <span class="co">#&gt;  4  snapwebs    sector FALSE</span>
 <span class="co">#&gt;  5  snapfuns functions FALSE</span>
-<span class="co">#&gt;  6  snaplocs functions  TRUE</span>
-<span class="co">#&gt;  7  snapprep functions  TRUE</span>
-<span class="co">#&gt;  8  alfresco functions  TRUE</span>
+<span class="co">#&gt;  6  snaplocs functions FALSE</span>
+<span class="co">#&gt;  7  snapprep functions FALSE</span>
+<span class="co">#&gt;  8  alfresco functions FALSE</span>
 <span class="co">#&gt;  9  snapclim      data FALSE</span>
 <span class="co">#&gt; 10  snapfire      data FALSE</span>
 <span class="co">#&gt; # ... with 13 more rows</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
-<span class="co">#&gt;  [1] "alfresco"  "apputils"  "rvtable"   "snapapps"  "snapgrid" </span>
-<span class="co">#&gt;  [6] "snaplocs"  "snapmeta"  "snappoly"  "snapprep"  "snapsite" </span>
-<span class="co">#&gt; [11] "snaputils" "snapverse"</span></code></pre></div>
+<span class="co">#&gt; character(0)</span></code></pre></div>
 </div>
 <div id="shiny-apps-support" class="section level2">
 <h2 class="hasAnchor">
