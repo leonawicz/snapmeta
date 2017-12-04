@@ -188,7 +188,7 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install snapmeta from github with:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools')</span>
-devtools::<span class="kw">install_github</span>(<span class="st">"leonawicz/snapmeta"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"leonawicz/snapmeta"</span>)</code></pre></div>
 </div>
 <div id="package-setup" class="section level2">
 <h2 class="hasAnchor">
@@ -207,7 +207,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"leonawicz/sna
 <span class="co">#&gt;   git push -u origin master</span>
 <span class="co">#&gt; 5. Then return to R console and run:</span>
 <span class="co">#&gt;   snapmeta::use_these()</span>
-<span class="co">#&gt;     NOTE: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
+<span class="co">#&gt;     </span><span class="al">NOTE</span><span class="co">: Run Rstudio session as Administator in Windows so usethese() can create lintr symbolic link.</span>
 <span class="co">#&gt; 6. Add Travis CI, Appveyor and code coverage badges to README.Rmd. Add projects on respective sites.</span>
 <span class="co">#&gt;   Badges are in console output. Remember to add the `after_success` segment to .travis.yml as well.</span>
 <span class="co">#&gt; 7. Check the following:</span>
@@ -243,9 +243,9 @@ devtools::<span class="kw">install_github</span>(<span class="st">"leonawicz/sna
 <span class="co">#&gt; # ... with 13 more rows</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
-<span class="co">#&gt;  [1] "alfresco"  "apputils"  "rvtable"   "snapapps"  "snapgrid" </span>
-<span class="co">#&gt;  [6] "snaplocs"  "snapmeta"  "snappoly"  "snapprep"  "snapsite" </span>
-<span class="co">#&gt; [11] "snaputils" "snapverse"</span></code></pre></div>
+<span class="co">#&gt;  [1] "alfresco"  "apputils"  "maputils"  "rvtable"   "snapapps" </span>
+<span class="co">#&gt;  [6] "snapgrid"  "snaplocs"  "snapmeta"  "snappoly"  "snapprep" </span>
+<span class="co">#&gt; [11] "snapsite"  "snaputils" "snapverse"</span></code></pre></div>
 </div>
 </div>
 </div>

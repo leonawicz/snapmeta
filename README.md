@@ -90,7 +90,7 @@ The table includes columns giving the section of the verse a package belongs to 
 
 ``` r
 sv_local_pkgs()
-#>  [1] "alfresco"  "apputils"  "rvtable"   "snapapps"  "snapgrid" 
-#>  [6] "snaplocs"  "snapmeta"  "snappoly"  "snapprep"  "snapsite" 
-#> [11] "snaputils" "snapverse"
+#>  [1] "alfresco"  "apputils"  "maputils"  "rvtable"   "snapapps" 
+#>  [6] "snapgrid"  "snaplocs"  "snapmeta"  "snappoly"  "snapprep" 
+#> [11] "snapsite"  "snaputils" "snapverse"
 ```
