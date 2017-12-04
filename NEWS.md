@@ -1,3 +1,7 @@
+# snapmeta 0.1.6 (Release date: 2017-12-04)
+
+* When calling `use_these`, `snapmeta` is now included as an Import in `DESCRIPTION` file for new package when creating package scaffolding only if the new package is listed as a SNAPverse sector package. `snapmeta` is never added as a suggested package.
+
 # snapmeta 0.1.5 (Release date: 2017-10-11)
 
 * Added `use_appsdesc` for adding template `DESCRIPTION` files to apps; to support the `snapapps` package.
