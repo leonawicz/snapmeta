@@ -77,11 +77,11 @@ sv_pkgs()
 #>  2  snaplite    sector FALSE
 #>  3  snapdata    sector FALSE
 #>  4  snapwebs    sector FALSE
-#>  5  snapfuns functions FALSE
+#>  5  snapstat functions FALSE
 #>  6  snaplocs functions  TRUE
 #>  7  snapprep functions  TRUE
 #>  8  alfresco functions  TRUE
-#>  9  snapclim      data FALSE
+#>  9  snapclim      data  TRUE
 #> 10  snapfire      data FALSE
 #> # ... with 13 more rows
 ```
@@ -91,6 +91,6 @@ The table includes columns giving the section of the verse a package belongs to 
 ``` r
 sv_local_pkgs()
 #>  [1] "alfresco"  "apputils"  "maputils"  "rvtable"   "snapapps" 
-#>  [6] "snapgrid"  "snaplocs"  "snapmeta"  "snappoly"  "snapprep" 
-#> [11] "snapsite"  "snaputils" "snapverse"
+#>  [6] "snapclim"  "snapgrid"  "snaplocs"  "snapmeta"  "snappoly" 
+#> [11] "snapprep"  "snapsite"  "snaputils" "snapverse"
 ```
