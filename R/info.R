@@ -44,7 +44,7 @@ sv_pkgs <- function(){
   typenames <- c("sector", "functions", "data", "apps", "satellite")
   type <- list(
     sector = c("snapverse", "snaplite", "snapdata", "snapwebs"),
-    functions = c("snapfuns", "snaplocs", "snapprep", "alfresco"),
+    functions = c("snapstat", "snaplocs", "snapprep", "alfresco"),
     data = c("snapclim", "snapfire", "snappoly", "snapgrid", "snapdist"),
     apps = c("snapapps", "snapdash", "snapflex", "snapdocs"),
     satellite = c("rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
@@ -62,7 +62,7 @@ pkg_metadata <- list(
   labels = sv_pkgs()$pkg,
   titles = c(
     "Functions, data, apps", "Load functions packages", "Load data packages", "All apps and docs",
-    "Work with SNAP data", "Work with point data", "Mung source data", "Work with ALFRESCO",
+    "Analyze SNAP data", "Work with point data", "Mung source data", "Work with ALFRESCO",
     "SNAP climate data", "SNAP fire data", "SNAP vector maps",
     "SNAP raster maps", "Spatial distributions",
     "SNAP Shiny apps", "SNAP Shiny apps", "SNAP dashboards", "SNAP docs",
