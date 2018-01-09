@@ -33,7 +33,7 @@ sv_local_pkgs <- function(base_path="../", self = TRUE){
 #' functions, data or apps. The three packages listed as \code{sector} packages load different subsets of SNAPverse packages
 #' for convenience. \code{snapverse} loads functions, data and apps packages. \code{snaplite} loads only the functions packages.
 #' \code{snapdata} loads only the data packages. For most users, the packages most likely needed or of interest
-#' are \code{snapfuns}, \code{snapapps} and any of the data packages.
+#' are \code{snapstat}, \code{snapapps} and any of the data packages.
 #'
 #' @return a data frame.
 #' @export
