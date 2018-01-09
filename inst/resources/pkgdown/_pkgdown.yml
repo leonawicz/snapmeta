@@ -34,10 +34,10 @@ navbar:
         - text: "Functions packages"
         - text: "snapstat"
           href: https://leonawicz.github.io/snapstat
-        - text: "snaplocs"
-          href: https://leonawicz.github.io/snaplocs
         - text: "snapplot"
           href: https://leonawicz.github.io/snapplot
+        - text: "snaplocs"
+          href: https://leonawicz.github.io/snaplocs
         - text: "snapprep"
           href: https://leonawicz.github.io/snapprep
         - text: "alfresco"
