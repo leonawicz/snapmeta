@@ -62,6 +62,8 @@ navbar:
           href: https://leonawicz.github.io/snapstat
         - text: "snaplocs"
           href: https://leonawicz.github.io/snaplocs
+        - text: "snapplot"
+          href: https://leonawicz.github.io/snapplot
         - text: "snapprep"
           href: https://leonawicz.github.io/snapprep
         - text: "alfresco"
