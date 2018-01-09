@@ -21,7 +21,6 @@ environment:
     USE_RTOOLS: true
 
 build_script:
-  - travis-tool.sh install_github r-lib/usethis
   - travis-tool.sh install_github hadley/pkgdown
   - travis-tool.sh install_deps
 

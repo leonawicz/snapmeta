@@ -13,5 +13,5 @@ test_that("info functions return as expected", {
   expect_equal(length(x), length(y) + 1)
 
   expect_is(sv_pkgs(), "tbl_df")
-  expect_identical(dim(sv_pkgs()), c(23L, 3L))
+  expect_identical(dim(sv_pkgs()), c(24L, 3L))
 })
