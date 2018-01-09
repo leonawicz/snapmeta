@@ -71,18 +71,18 @@ A table of all SNAPverse packages can be obtained by:
 ``` r
 sv_pkgs()
 #> # A tibble: 23 x 3
-#>          pkg      type local
-#>        <chr>     <chr> <lgl>
-#>  1 snapverse    sector  TRUE
-#>  2  snaplite    sector FALSE
-#>  3  snapdata    sector FALSE
-#>  4  snapwebs    sector FALSE
-#>  5  snapstat functions FALSE
-#>  6  snaplocs functions  TRUE
-#>  7  snapprep functions  TRUE
-#>  8  alfresco functions  TRUE
-#>  9  snapclim      data  TRUE
-#> 10  snapfire      data FALSE
+#>    pkg       type      local
+#>    <chr>     <chr>     <lgl>
+#>  1 snapverse sector    T    
+#>  2 snaplite  sector    F    
+#>  3 snapdata  sector    F    
+#>  4 snapwebs  sector    F    
+#>  5 snapstat  functions T    
+#>  6 snaplocs  functions T    
+#>  7 snapprep  functions T    
+#>  8 alfresco  functions T    
+#>  9 snapclim  data      T    
+#> 10 snapfire  data      T    
 #> # ... with 13 more rows
 ```
 
@@ -91,6 +91,7 @@ The table includes columns giving the section of the verse a package belongs to 
 ``` r
 sv_local_pkgs()
 #>  [1] "alfresco"  "apputils"  "maputils"  "rvtable"   "snapapps" 
-#>  [6] "snapclim"  "snapgrid"  "snaplocs"  "snapmeta"  "snappoly" 
-#> [11] "snapprep"  "snapsite"  "snaputils" "snapverse"
+#>  [6] "snapclim"  "snapfire"  "snapflex"  "snapgrid"  "snaplocs" 
+#> [11] "snapmeta"  "snapplot"  "snappoly"  "snapprep"  "snapsite" 
+#> [16] "snapstat"  "snaputils" "snapverse"
 ```
