@@ -5,7 +5,7 @@ snapmeta
 
 [![Travis-CI Build Status](https://travis-ci.org/leonawicz/snapmeta.svg?branch=master)](https://travis-ci.org/leonawicz/snapmeta) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/leonawicz/snapmeta?branch=master&svg=true)](https://ci.appveyor.com/project/leonawicz/snapmeta) [![Coverage Status](https://img.shields.io/codecov/c/github/leonawicz/snapmeta/master.svg)](https://codecov.io/github/leonawicz/snapmeta?branch=master)
 
-`snapmeta` contains a collection of utility functions for the development of other SNAPverse packages. `snapmeta` is a satellite package of the SNAPverse collection of R packages.
+`snapmeta` contains a collection of utility functions for the development of other [SNAPverse](https://leonawicz.github.io/snapverse/) packages. `snapmeta` is a satellite package of the SNAPverse collection of R packages.
 
 <p style="text-align:center;">
 <img src="man/figures/sv_satellites_dev.png" width=350>
@@ -95,3 +95,8 @@ sv_local_pkgs()
 #> [11] "snapmeta"  "snapplot"  "snappoly"  "snapprep"  "snapsite" 
 #> [16] "snapstat"  "snaputils" "snapverse"
 ```
+
+Reference
+---------
+
+[Complete package reference and function documentation](https://leonawicz.github.io/snapmeta/)
