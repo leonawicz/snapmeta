@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/leonawicz/snapmeta?branch=master&svg=true)](https://ci.appveyor.com/project/leonawicz/snapmeta)
 [![Coverage Status](https://img.shields.io/codecov/c/github/leonawicz/snapmeta/master.svg)](https://codecov.io/github/leonawicz/snapmeta?branch=master)
 
-`snapmeta` contains a collection of utility functions for the development of other SNAPverse packages.
+`snapmeta` contains a collection of utility functions for the development of other [SNAPverse](https://leonawicz.github.io/snapverse/) packages.
 `snapmeta` is a satellite package of the SNAPverse collection of R packages.
 
 ```{r is_md, echo=FALSE}
@@ -79,4 +79,8 @@ A short list of the latter existing local packages can be obtained by:
 
 ```{r sv_local_pkgs}
 sv_local_pkgs()
+```
+
+```{r md_pkg_ref, echo = FALSE, results = "asis", eval = is_md}
+cat('## Reference\n\n[Complete package reference and function documentation](https://leonawicz.github.io/snapmeta/)')
 ```
