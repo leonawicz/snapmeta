@@ -1,3 +1,8 @@
+# snapmeta 0.1.8 (Release date: 2018-04-01)
+
+* Updated to reflect inclusion of new `jfsp` package.
+* Added `use_hex` function for providing package hex icon generating script to new packages.
+
 # snapmeta 0.1.7 (Release date: 2018-01-09)
 
 * Updated to reflect inclusion of new `snapplot` package.
