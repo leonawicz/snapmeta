@@ -239,7 +239,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#getting-info-from-the-verse" class="anchor"></a>Getting info from the verse</h2>
 <p>A table of all SNAPverse packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_pkgs.html">sv_pkgs</a></span>()
-<span class="co">#&gt; # A tibble: 24 x 3</span>
+<span class="co">#&gt; # A tibble: 25 x 3</span>
 <span class="co">#&gt;    pkg       type      local</span>
 <span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;lgl&gt;</span>
 <span class="co">#&gt;  1 snapverse sector    T    </span>
@@ -252,13 +252,13 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt;  8 snapprep  functions T    </span>
 <span class="co">#&gt;  9 alfresco  functions T    </span>
 <span class="co">#&gt; 10 snapclim  data      T    </span>
-<span class="co">#&gt; # ... with 14 more rows</span></code></pre></div>
+<span class="co">#&gt; # ... with 15 more rows</span></code></pre></div>
 <p>The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sv_local_pkgs.html">sv_local_pkgs</a></span>()
-<span class="co">#&gt;  [1] "alfresco"  "apputils"  "maputils"  "rvtable"   "snapapps" </span>
-<span class="co">#&gt;  [6] "snapclim"  "snapfire"  "snapflex"  "snapgrid"  "snaplocs" </span>
-<span class="co">#&gt; [11] "snapmeta"  "snapplot"  "snappoly"  "snapprep"  "snapsite" </span>
-<span class="co">#&gt; [16] "snapstat"  "snaputils" "snapverse"</span></code></pre></div>
+<span class="co">#&gt;  [1] "alfresco"  "apputils"  "jfsp"      "maputils"  "rvtable"  </span>
+<span class="co">#&gt;  [6] "snapapps"  "snapclim"  "snapfire"  "snapflex"  "snapgrid" </span>
+<span class="co">#&gt; [11] "snaplocs"  "snapmeta"  "snapplot"  "snappoly"  "snapprep" </span>
+<span class="co">#&gt; [16] "snapsite"  "snapstat"  "snaputils" "snapverse"</span></code></pre></div>
 </div>
 </div>
   </div>
