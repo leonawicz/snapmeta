@@ -15,7 +15,7 @@
 #' @examples
 #' sv_local_pkgs()
 sv_local_pkgs <- function(base_path="../", self = TRUE){
-  x <- list.files(base_path, pattern = "^snap*|^alfresco$|^rvtable$|^apputils$|^maputils$")
+  x <- list.files(base_path, pattern = "^snap*|^alfresco$|^jfsp$|^rvtable$|^apputils$|^maputils$")
   if(!self) x <- x[x != basename(getwd())]
   x
 }
@@ -47,7 +47,7 @@ sv_pkgs <- function(){
     functions = c("snapstat", "snapplot", "snaplocs", "snapprep", "alfresco"),
     data = c("snapclim", "snapfire", "snappoly", "snapgrid", "snapdist"),
     apps = c("snapapps", "snapdash", "snapflex", "snapdocs"),
-    satellite = c("rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
+    satellite = c("jfsp", "rvtable", "apputils", "maputils", "snaputils", "snapmeta", "snapsite")
 
   )
   d <- tibble::data_frame(
@@ -66,7 +66,7 @@ pkg_metadata <- list(
     "SNAP climate data", "SNAP fire data", "SNAP vector maps",
     "SNAP raster maps", "Spatial distributions",
     "SNAP Shiny apps", "SNAP Shiny apps", "SNAP dashboards", "SNAP docs",
-    "Random variables", "Shiny app support", "Shiny and Leaflet", "SNAP app support",
+    "Joint Fire Science Program", "Random variables", "Shiny app support", "Shiny and Leaflet", "SNAP app support",
     "SNAPverse integration", "SNAPverse integration"
     ),
   subtitles = c(
@@ -75,7 +75,7 @@ pkg_metadata <- list(
     "Modeled and observational", "Modeled and observational", "Common spatial polygons",
     "Common raster layers", "Example data sets",
     "Various examples", "Shiny dashboards", "Flex dashboard examples", "Interactive documents",
-    "Distributions tables", "Common utilities", "Mapsets utilities", "SNAP-specific utilities",
+    "Alaska wildfire", "Distributions tables", "Common utilities", "Mapsets utilities", "SNAP-specific utilities",
     "For developers", "For developers"
     )
 )
