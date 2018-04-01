@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,9 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   
+<meta property="og:title" content="Function reference" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -46,6 +51,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -59,8 +66,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">snapmeta</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">snapmeta</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.8</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -70,13 +81,13 @@
   </a>
 </li>
 <li>
-  <a href="../articles/snapmeta.html">Get Started</a>
+  <a href="../articles/snapmeta.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -158,6 +169,9 @@
     <li class="divider"></li>
     <li class="dropdown-header">Satellite packages</li>
     <li>
+      <a href="https://leonawicz.github.io/jfsp">jfsp</a>
+    </li>
+    <li>
       <a href="https://leonawicz.github.io/rvtable">rvtable</a>
     </li>
     <li>
@@ -184,6 +198,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -191,154 +206,155 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.1.7</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-package-setup" class="hasAnchor"><a href="#section-package-setup" class="anchor"></a>Package setup</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="reminders.html">reminders</a></code> </p>
-          </td>
-          <td><p>New R package reminders</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_these.html">use_these</a></code> </p>
-          </td>
-          <td><p>Wrapper function for package setup</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_authors.html">use_authors</a></code> </p>
-          </td>
-          <td><p>Add author and license information to R package</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_clone_notes.html">use_clone_notes</a></code> </p>
-          </td>
-          <td><p>Add <code>clone_notes.md</code> to R package</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_lintr.html">use_lintr</a></code> </p>
-          </td>
-          <td><p>Add <code>lintr</code> to R package</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="pkg_authors.html">pkg_authors</a></code> </p>
-          </td>
-          <td><p>Package author and copyright holder/funder</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="pkg_cph.html">pkg_cph</a></code> </p>
-          </td>
-          <td><p>Copyright holder</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-snapverse-information" class="hasAnchor"><a href="#section-snapverse-information" class="anchor"></a>SNAPverse information</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sv_local_pkgs.html">sv_local_pkgs</a></code> </p>
-          </td>
-          <td><p>List local SNAPverse packages</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sv_pkgs.html">sv_pkgs</a></code> </p>
-          </td>
-          <td><p>Location in the SNAPverse</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="pkg_titles.html">pkg_titles</a></code> </p>
-          </td>
-          <td><p>Get heading information related to SNAPverse R packages</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sector_members.html">sector_members</a></code> </p>
-          </td>
-          <td><p>Get members of a sector</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-sector-packages" class="hasAnchor"><a href="#section-sector-packages" class="anchor"></a>Sector packages</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="verse_attach.html">verse_attach</a></code> <code><a href="verse_attach.html">is_attached</a></code> </p>
-          </td>
-          <td><p>Attach SNAPverse member packages</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sector_update.html">sector_update</a></code> </p>
-          </td>
-          <td><p>Update SNAPverse sector packages</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-snapapps-support" class="hasAnchor"><a href="#section-snapapps-support" class="anchor"></a>snapapps support</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_apps.html">use_apps</a></code> </p>
-          </td>
-          <td><p>Use apps from shiny-apps repo in snapapps package</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_appdesc.html">use_appdesc</a></code> </p>
-          </td>
-          <td><p>Create an app DESCRIPTION file</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="use_appreadme.html">use_appreadme</a></code> </p>
-          </td>
-          <td><p>Create an app Readme.md file</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-package-setup" class="hasAnchor"><a href="#section-package-setup" class="anchor"></a>Package setup</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="reminders.html">reminders()</a></code> </p>
+        </td>
+        <td><p>New R package reminders</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_these.html">use_these()</a></code> </p>
+        </td>
+        <td><p>Wrapper function for package setup</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_authors.html">use_authors()</a></code> </p>
+        </td>
+        <td><p>Add author and license information to R package</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_clone_notes.html">use_clone_notes()</a></code> </p>
+        </td>
+        <td><p>Add <code>clone_notes.md</code> to R package</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_lintr.html">use_lintr()</a></code> </p>
+        </td>
+        <td><p>Add <code>lintr</code> to R package</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_hex.html">use_hex()</a></code> </p>
+        </td>
+        <td><p>Add <code>hex.R</code> to R package</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="pkg_authors.html">pkg_authors()</a></code> </p>
+        </td>
+        <td><p>Package author and copyright holder/funder</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="pkg_cph.html">pkg_cph()</a></code> </p>
+        </td>
+        <td><p>Copyright holder</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-snapverse-information" class="hasAnchor"><a href="#section-snapverse-information" class="anchor"></a>SNAPverse information</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="sv_local_pkgs.html">sv_local_pkgs()</a></code> </p>
+        </td>
+        <td><p>List local SNAPverse packages</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="sv_pkgs.html">sv_pkgs()</a></code> </p>
+        </td>
+        <td><p>Location in the SNAPverse</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="pkg_titles.html">pkg_titles()</a></code> </p>
+        </td>
+        <td><p>Get heading information related to SNAPverse R packages</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="sector_members.html">sector_members()</a></code> </p>
+        </td>
+        <td><p>Get members of a sector</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-sector-packages" class="hasAnchor"><a href="#section-sector-packages" class="anchor"></a>Sector packages</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="verse_attach.html">verse_attach()</a></code> <code><a href="verse_attach.html">is_attached()</a></code> </p>
+        </td>
+        <td><p>Attach SNAPverse member packages</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="sector_update.html">sector_update()</a></code> </p>
+        </td>
+        <td><p>Update SNAPverse sector packages</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-snapapps-support" class="hasAnchor"><a href="#section-snapapps-support" class="anchor"></a>snapapps support</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_apps.html">use_apps()</a></code> </p>
+        </td>
+        <td><p>Use apps from shiny-apps repo in snapapps package</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_appdesc.html">use_appdesc()</a></code> </p>
+        </td>
+        <td><p>Create an app DESCRIPTION file</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="use_appreadme.html">use_appreadme()</a></code> </p>
+        </td>
+        <td><p>Create an app Readme.md file</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -358,11 +374,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

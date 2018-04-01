@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create an app DESCRIPTION file — use_appdesc • snapmeta</title>
+<title>Add <code>hex.R</code> to R package — use_hex • snapmeta</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,9 +27,9 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Create an app DESCRIPTION file — use_appdesc" />
+<meta property="og:title" content="Add <code>hex.R</code> to R package — use_hex" />
 
-<meta property="og:description" content="Add a DESCRIPTION template to a Shiny app." />
+<meta property="og:description" content="Add hex.R to a SNAPverse R package data-raw directory." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -212,70 +212,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create an app DESCRIPTION file</h1>
+    <h1>Add <code>hex.R</code> to R package</h1>
     
     </div>
 
     
-    <p>Add a DESCRIPTION template to a Shiny app.</p>
+    <p>Add <code>hex.R</code> to a SNAPverse R package <code>data-raw</code> directory.</p>
     
 
-    <pre class="usage"><span class='fu'>use_appdesc</span>(<span class='kw'>base_path</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='no'>title</span>, <span class='kw'>author</span> <span class='kw'>=</span> <span class='st'>"Matthew Leonawicz"</span>,
-  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>"https://leonawicz.github.io/"</span>, <span class='kw'>license</span> <span class='kw'>=</span> <span class='st'>"MIT"</span>,
-  <span class='kw'>mode</span> <span class='kw'>=</span> <span class='st'>"Showcase"</span>, <span class='no'>tags</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>base_path</th>
-      <td><p>output directory.</p></td>
-    </tr>
-    <tr>
-      <th>title</th>
-      <td><p>app title.</p></td>
-    </tr>
-    <tr>
-      <th>author</th>
-      <td><p>author name.</p></td>
-    </tr>
-    <tr>
-      <th>url</th>
-      <td><p>author url.</p></td>
-    </tr>
-    <tr>
-      <th>license</th>
-      <td><p>license type.</p></td>
-    </tr>
-    <tr>
-      <th>mode</th>
-      <td><p>Shiny display mode.</p></td>
-    </tr>
-    <tr>
-      <th>tags</th>
-      <td><p>optional tags. May be a vector. See details.</p></td>
-    </tr>
-    </table>
+    <pre class="usage"><span class='fu'>use_hex</span>()</pre>
+        
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>side effect of creating file.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This file is used with Shiny app showcase mode.
-Since <code>snapmeta</code> is a developer package used by the SNAPverse author/maintainer,
-most arguments to <code>use_appdesc</code> have contextual defaults that you must otherwise override.
-<code>title</code> and <code>tags</code> do not have defaults. If missing, they should be updated directly in the generated DESCRIPTION file.
-Tags passed in the form <code>tags = c("random variables", "plotmath")</code> will result in <code>random-variables, plotmath</code>.</p>
+    <p>This script provides a template for package hex sticker icons, a large icon in <code>data-raw</code> and a small icon in <code>inst</code>.
+The script is not run by <code>snapmeta</code> since it will likely require customization after it is generated.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>use_appdesc</span>()
+<span class='no'>use_hex</span>
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
       <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
