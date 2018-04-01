@@ -20,6 +20,7 @@ reference:
   - use_authors
   - use_clone_notes
   - use_lintr
+  - use_hex
   - pkg_authors
   - pkg_cph
 - title: SNAPverse information
@@ -92,6 +93,8 @@ navbar:
           href: https://leonawicz.github.io/snapdocs
         - text: "--------"
         - text: "Satellite packages"
+        - text: "jfsp"
+          href: https://leonawicz.github.io/jfsp
         - text: "rvtable"
           href: https://leonawicz.github.io/rvtable
         - text: "apputils"

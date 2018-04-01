@@ -66,6 +66,8 @@ navbar:
           href: https://leonawicz.github.io/snapdocs
         - text: "--------"
         - text: "Satellite packages"
+        - text: "jfsp"
+          href: https://leonawicz.github.io/jfsp
         - text: "rvtable"
           href: https://leonawicz.github.io/rvtable
         - text: "apputils"

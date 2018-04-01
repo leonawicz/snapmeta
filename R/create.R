@@ -168,6 +168,22 @@ use_clone_notes <- function(){
   sink()
 }
 
+#' Add \code{hex.R} to R package
+#'
+#' Add \code{hex.R} to a SNAPverse R package \code{data-raw} directory.
+#'
+#' This script provides a template for package hex sticker icons, a large icon in \code{data-raw} and a small icon in \code{inst}.
+#' The script is not run by \code{snapmeta} since it will likely require customization after it is generated.
+#'
+#' @return side effect of creating file.
+#' @export
+#'
+#' @examples
+#' \dontrun{use_hex}
+use_hex <- function(){
+  file.copy(system.file(package = "snapmeta", "resources/hex.R"), "data-raw/hex.R")
+}
+
 #' Wrapper function for package setup
 #'
 #' Wrapper function around several package creation/setup functions from the \code{usethis} and \code{snapmeta} packages.
@@ -210,6 +226,7 @@ use_these <- function(pkg = basename(getwd()), authors = pkg_authors(), cph=pkg_
   usethis::use_revdep()
   snapmeta::use_lintr()
   pkgdown::init_site()
+  use_hex()
   pdfiles <- list.files(file.path(system.file(package = "snapmeta"), "resources/pkgdown"),
                         full.names = TRUE)
   dir.create("pkgdown", showWarnings = FALSE)
