@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Attach SNAPverse member packages — verse_attach" />
@@ -46,19 +49,15 @@ Checks if a package is attached." />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46129458-3"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-46129458-3', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-46129458-3');
 </script>
-
-
 
   </head>
 
@@ -218,8 +217,10 @@ Checks if a package is attached." />
     <div class="page-header">
     <h1>Attach SNAPverse member packages</h1>
     
+    <div class="hidden name"><code>verse_attach.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Attach SNAPverse member packages for different sectors of the verse.
 There are three sector packages: <code>snapverse</code>, <code>snaplite</code> and <code>snapdata</code>.
@@ -227,6 +228,7 @@ Each passes a list of packages via <code>core</code> to <code>verse_attach</code
 See the respective packages for details.</p>
 <p>Checks if a package is attached.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>verse_attach</span>(<span class='no'>core</span>)
 
