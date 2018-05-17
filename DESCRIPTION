@@ -28,7 +28,8 @@ Suggests:
     testthat,
     covr,
     knitr,
-    rmarkdown
+    rmarkdown.
+    lintr
 Remotes:
     hadley/pkgdown,
     gaborcsardi/crayon

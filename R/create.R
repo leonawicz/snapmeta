@@ -145,6 +145,7 @@ use_lintr <- function(base_path = ".", use_testthat = TRUE){
     "lintr::expect_lint_free()\n  ",
     "})\n", "}\n"))
   sink()
+  usethis::use_package("lintr", "suggests")
 }
 
 #' Add \code{clone_notes.md} to R package
