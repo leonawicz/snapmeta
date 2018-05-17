@@ -30,8 +30,5 @@ Suggests:
     knitr,
     rmarkdown,
     lintr
-Remotes:
-    hadley/pkgdown,
-    gaborcsardi/crayon
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
