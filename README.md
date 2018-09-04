@@ -5,6 +5,11 @@ snapmeta
 
 [![Travis-CI Build Status](https://travis-ci.org/leonawicz/snapmeta.svg?branch=master)](https://travis-ci.org/leonawicz/snapmeta) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/leonawicz/snapmeta?branch=master&svg=true)](https://ci.appveyor.com/project/leonawicz/snapmeta) [![Coverage Status](https://img.shields.io/codecov/c/github/leonawicz/snapmeta/master.svg)](https://codecov.io/github/leonawicz/snapmeta?branch=master)
 
+SNAPverse R package ecosystem development frozen.
+-------------------------------------------------
+
+*Development of the SNAPverse R package ecosystem has been frozen indefinitely. This project was never directly funded. I began it out of personal interest, but no longer work for SNAP. It will remain archived here for historical reference.*
+
 `snapmeta` contains a collection of utility functions for the development of other [SNAPverse](https://leonawicz.github.io/snapverse/) packages. `snapmeta` is a satellite package of the SNAPverse collection of R packages.
 
 <p style="text-align:center;">
@@ -70,30 +75,30 @@ A table of all SNAPverse packages can be obtained by:
 
 ``` r
 sv_pkgs()
-#> # A tibble: 24 x 3
+#> # A tibble: 25 x 3
 #>    pkg       type      local
 #>    <chr>     <chr>     <lgl>
-#>  1 snapverse sector    T    
-#>  2 snaplite  sector    F    
-#>  3 snapdata  sector    F    
-#>  4 snapwebs  sector    F    
-#>  5 snapstat  functions T    
-#>  6 snapplot  functions T    
-#>  7 snaplocs  functions T    
-#>  8 snapprep  functions T    
-#>  9 alfresco  functions T    
-#> 10 snapclim  data      T    
-#> # ... with 14 more rows
+#>  1 snapverse sector    TRUE 
+#>  2 snaplite  sector    FALSE
+#>  3 snapdata  sector    FALSE
+#>  4 snapwebs  sector    FALSE
+#>  5 snapstat  functions TRUE 
+#>  6 snapplot  functions TRUE 
+#>  7 snaplocs  functions TRUE 
+#>  8 snapprep  functions TRUE 
+#>  9 alfresco  functions TRUE 
+#> 10 snapclim  data      TRUE 
+#> # ... with 15 more rows
 ```
 
 The table includes columns giving the section of the verse a package belongs to and whether or not a local git repository/R source package exists sharing the same parent directory as the current package (current working directory). A short list of the latter existing local packages can be obtained by:
 
 ``` r
 sv_local_pkgs()
-#>  [1] "alfresco"  "apputils"  "maputils"  "rvtable"   "snapapps" 
-#>  [6] "snapclim"  "snapfire"  "snapflex"  "snapgrid"  "snaplocs" 
-#> [11] "snapmeta"  "snapplot"  "snappoly"  "snapprep"  "snapsite" 
-#> [16] "snapstat"  "snaputils" "snapverse"
+#>  [1] "alfresco"  "apputils"  "jfsp"      "maputils"  "rvtable"  
+#>  [6] "snapapps"  "snapclim"  "snapfire"  "snapflex"  "snapgrid" 
+#> [11] "snaplocs"  "snapmeta"  "snapplot"  "snappoly"  "snapprep" 
+#> [16] "snapsite"  "snapstat"  "snaputils" "snapverse"
 ```
 
 Reference

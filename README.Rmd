@@ -18,6 +18,10 @@ knitr::opts_chunk$set(
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/leonawicz/snapmeta?branch=master&svg=true)](https://ci.appveyor.com/project/leonawicz/snapmeta)
 [![Coverage Status](https://img.shields.io/codecov/c/github/leonawicz/snapmeta/master.svg)](https://codecov.io/github/leonawicz/snapmeta?branch=master)
 
+## SNAPverse R package ecosystem development frozen.
+
+*Development of the SNAPverse R package ecosystem has been frozen indefinitely. This project was never directly funded. I began it out of personal interest, but no longer work for SNAP. It will remain archived here for historical reference.*
+
 `snapmeta` contains a collection of utility functions for the development of other [SNAPverse](https://leonawicz.github.io/snapverse/) packages.
 `snapmeta` is a satellite package of the SNAPverse collection of R packages.
 
